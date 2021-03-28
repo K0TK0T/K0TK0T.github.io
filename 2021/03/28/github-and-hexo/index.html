@@ -6,11 +6,11 @@
   <title>Kotori&#39;s Blog Hut</title>
   <meta name="author" content="Kotori">
   
-  <meta name="description" content="在GitHub上使用Hexo搭建个人博客（2021.3）想在GitHub上搭建博客首先要了解需要几个步骤，以及各个步骤中需要用到什么软件和技巧。
+  <meta name="description" content="在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）想在GitHub上搭建博客首先要了解需要用到什么，原理是什么，其次要了解有几个步骤，以及各个步骤中具体需要什么软件和技巧。
 1、Git，GitHub和Hexo
 Git
 
-Git是一个版本控制软件。它安装在你的计算机上，最实用的地方在于管理工程，比如电脑上有一个正在开发的项目，怕">
+Git是一个版本控制软件。它安装在你的计算">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -66,28 +66,43 @@ Git是一个版本控制软件。它安装在你的计算机上，最实用的�
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="在GitHub上使用Hexo搭建个人博客（2021-3）"><a href="#在GitHub上使用Hexo搭建个人博客（2021-3）" class="headerlink" title="在GitHub上使用Hexo搭建个人博客（2021.3）"></a>在GitHub上使用Hexo搭建个人博客（2021.3）</h2><p>想在GitHub上搭建博客首先要了解需要几个步骤，以及各个步骤中需要用到什么软件和技巧。</p>
+        <h2 id="在GitHub上使用Hexo搭建个人博客（2021-3，raspberry-pi-4b）"><a href="#在GitHub上使用Hexo搭建个人博客（2021-3，raspberry-pi-4b）" class="headerlink" title="在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）"></a>在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）</h2><p>想在GitHub上搭建博客首先要了解需要用到什么，原理是什么，其次要了解有几个步骤，以及各个步骤中具体需要什么软件和技巧。</p>
 <h3 id="1、Git，GitHub和Hexo"><a href="#1、Git，GitHub和Hexo" class="headerlink" title="1、Git，GitHub和Hexo"></a>1、Git，GitHub和Hexo</h3><ul>
-<li>Git</li>
+<li><strong>Git</strong></li>
 </ul>
-<p>Git是一个版本控制软件。它安装在你的计算机上，最实用的地方在于管理工程，比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用还可以做到跨平台同步和多人协作。</p>
+<p>Git是一个版本控制软件。它安装在你的计算机上，最实用的地方在于管理工程，比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用可以做到跨平台同步和多人协作。</p>
 <ul>
-<li>GitHub</li>
+<li><strong>GitHub</strong></li>
 </ul>
 <p>Git项目托管平台，支持Git作为唯一的版本库格式进行托管。GitHub中的每一个repository都对应一个Git仓库（也就是初始化过，文件夹下有.git的目录），通过pull、push等操作和主机进行数据交换。</p>
 <ul>
-<li>Hexo</li>
+<li><strong>Hexo</strong></li>
 </ul>
-<p>静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就<code>hexo generate &amp; hexo deploy</code>。</p>
+<p>静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就运行<code>hexo generate &amp; hexo deploy</code>。</p>
 <ul>
 <li>node.js</li>
 </ul>
-<p>基于Chrome V8的JavaScript Runtime，Hexo基于它制作，安装Hexo必不可少。</p>
+<p>基于Chrome V8的JavaScript Runtime，Hexo的运行环境，一起安装的npm是一个相当强大的软件包管理器。</p>
 <ul>
 <li>Markdown</li>
 </ul>
 <p>一种文本标记语言，可以说在HTML顶层，兼容HTML语法。Mrakdown语法简洁，并且易于阅读和修改，毕竟写博客的时候一大堆HTML标签的排版问题会让人很头疼。Mrakdown最终还是翻译为HTML显示在网站中。</p>
-
+<h3 id="2、它们如何协作"><a href="#2、它们如何协作" class="headerlink" title="2、它们如何协作"></a>2、它们如何协作</h3><p>简言之就是Git用来管理Hexo项目以及把它生成的静态网页发送到GitHub上，然后由GitHub托管你的博客网站。</p>
+<p>GitHub有一个很好用的功能，就是可以用username.github.io作为域名访问username.github.io.git仓库下的网站。最简单的玩法，在你的GitHub账户中建立名字为username.github.io的仓库，push进去index.html，显示的就是index.html的界面。如果换一个浪漫一点的域名，在网页上画一个爱心，甚至能用来表白 orz。</p>
+<h3 id="3、安装Hexo，生成博客框架"><a href="#3、安装Hexo，生成博客框架" class="headerlink" title="3、安装Hexo，生成博客框架"></a>3、安装Hexo，生成博客框架</h3><p>这一部分<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官网文档</a>有详细说明，不同操作系统可以自己查找。</p>
+<ul>
+<li><p>安装<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">node.js</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure></li>
+<li><p>安装Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></li>
+<li><p>生成网站框架</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/blog &amp; <span class="built_in">cd</span> ~/blog</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li><p>设置_config.yml参数，主要是#Site部分。这些会显示在你的博客首页。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: Kotori&#39;s Blog Hut</span><br><span class="line">subtitle: &#39;&#39;</span><br><span class="line">description: &#39;&#39;</span><br><span class="line">keywords:</span><br><span class="line">author: Kotori</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure></li>
+<li><p>本地测试，这时应该显示默认主题landscape和/source/_posts下的hello-world.md。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">curl http://localhost:4000  <span class="comment">#或者直接浏览器访问</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4、安装Git，设置GitHub，部署静态网页"><a href="#4、安装Git，设置GitHub，部署静态网页" class="headerlink" title="4、安装Git，设置GitHub，部署静态网页"></a>4、安装Git，设置GitHub，部署静态网页</h3>
       
     </div>
     <footer>
