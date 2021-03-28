@@ -45,28 +45,43 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-github" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-github-and-hexo" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2021-03-28T08:37:36.872Z"><a href="/2021/03/28/github/">2021-03-28</a></time>
+        <time class="dt-published" datetime="2021-03-28T08:37:36.872Z"><a href="/2021/03/28/github-and-hexo/">2021-03-28</a></time>
       
       
   
-    <h1 class="title"><a href="/2021/03/28/github/"></a></h1>
+    <h1 class="title"><a href="/2021/03/28/github-and-hexo/"></a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h1 id="关于GitHub"><a href="#关于GitHub" class="headerlink" title="关于GitHub"></a>关于GitHub</h1><p>这次可真是给我整废了<br>主要是以下几点：</p>
-<ul>
-<li>github与博客的关系</li>
-<li>github的动态部署</li>
-<li>文件结构的理解</li>
+        <h2 id="在GitHub上使用Hexo搭建个人博客（2021-3）"><a href="#在GitHub上使用Hexo搭建个人博客（2021-3）" class="headerlink" title="在GitHub上使用Hexo搭建个人博客（2021.3）"></a>在GitHub上使用Hexo搭建个人博客（2021.3）</h2><p>想在GitHub上搭建博客首先要了解需要几个步骤，以及各个步骤中需要用到什么软件和技巧。</p>
+<h3 id="1、Git，GitHub和Hexo"><a href="#1、Git，GitHub和Hexo" class="headerlink" title="1、Git，GitHub和Hexo"></a>1、Git，GitHub和Hexo</h3><ul>
+<li>Git</li>
 </ul>
+<p>Git是一个版本控制软件。它安装在你的计算机上，最实用的地方在于管理工程，比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用还可以做到跨平台同步和多人协作。</p>
+<ul>
+<li>GitHub</li>
+</ul>
+<p>Git项目托管平台，支持Git作为唯一的版本库格式进行托管。GitHub中的每一个repository都对应一个Git仓库（也就是初始化过，文件夹下有.git的目录），通过pull、push等操作和主机进行数据交换。</p>
+<ul>
+<li>Hexo</li>
+</ul>
+<p>静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就<code>hexo generate &amp; hexo deploy</code>。</p>
+<ul>
+<li>node.js</li>
+</ul>
+<p>基于Chrome V8的JavaScript Runtime，Hexo基于它制作，安装Hexo必不可少。</p>
+<ul>
+<li>Markdown</li>
+</ul>
+<p>一种文本标记语言，可以说在HTML顶层，兼容HTML语法。Mrakdown语法简洁，并且易于阅读和修改，毕竟写博客的时候一大堆HTML标签的排版问题会让人很头疼。Mrakdown最终还是翻译为HTML显示在网站中。</p>
 
       
     </div>
