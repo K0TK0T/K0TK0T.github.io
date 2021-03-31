@@ -23,27 +23,27 @@
   <meta name="description" content="你不可一日不学习，当然也不可一日不玩游戏～">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kotori&#39;s Blog ~">
-<meta property="og:url" content="https://k0tk0t.github.io/index.html">
+<meta property="og:url" content="https://k0tk0t.github.io/categories/ubuntu/index.html">
 <meta property="og:site_name" content="Kotori&#39;s Blog ~">
 <meta property="og:description" content="你不可一日不学习，当然也不可一日不玩游戏～">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Kotori">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://k0tk0t.github.io/">
+<link rel="canonical" href="https://k0tk0t.github.io/categories/ubuntu/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
+    isHome : false,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Kotori's Blog ~</title>
+  <title>分类: ubuntu | Kotori's Blog ~</title>
   
 
 
@@ -156,236 +156,50 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content category">
             
-      
+
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://k0tk0t.github.io/2021/03/29/github-and-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Kotori">
-      <meta itemprop="description" content="你不可一日不学习，当然也不可一日不玩游戏～">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kotori's Blog ~">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/29/github-and-hexo/" class="post-title-link" itemprop="url">在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）</a>
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">ubuntu
+          <small>分类</small>
         </h2>
-
-        <div class="post-meta">
-          
-          
-            <i class="fa fa-thumb-tack"></i>
-            <font color=green>置顶</font>
-            <span class="post-meta-divider">|</span>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-29 18:00:00" itemprop="dateCreated datePublished" datetime="2021-03-29T18:00:00+08:00">2021-03-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-31 23:04:40" itemprop="dateModified" datetime="2021-03-31T23:04:40+08:00">2021-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/03/29/github-and-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/03/29/github-and-hexo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/29/github-and-hexo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-          <h3 id="1、Git，GitHub和Hexo"><a href="#1、Git，GitHub和Hexo" class="headerlink" title="1、Git，GitHub和Hexo"></a>1、Git，GitHub和Hexo</h3><ul>
-<li><strong>Git</strong></li>
-</ul>
-<p>Git是一个版本控制系统，它安装在你的计算机上，用于管理工程。比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用可以做到跨平台同步和多人协作。</p>
-<ul>
-<li><strong>GitHub</strong></li>
-</ul>
-<p>Git项目托管平台，支持Git作为唯一的版本库格式进行托管。GitHub中的每一个repository都对应一个Git仓库（也就是初始化过，文件夹下有.git的目录），通过pull、push等操作和主机进行数据交换。</p>
-<ul>
-<li><strong>Hexo</strong></li>
-</ul>
-<p>静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就运行<code>hexo generate &amp; hexo deploy</code>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/29/github-and-hexo/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
     </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-03-31T18:00:00+08:00"
+              content="2021-03-31">
+          03-31
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/03/31/ubuntu-and-typora/" itemprop="url">
+            <span itemprop="name">在Ubuntu上安装Typora（2021.3，Ubuntu 16.04）</span>
+          </a>
+      </div>
+
+    </header>
   </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://k0tk0t.github.io/2021/03/31/ubuntu-and-typora/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Kotori">
-      <meta itemprop="description" content="你不可一日不学习，当然也不可一日不玩游戏～">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kotori's Blog ~">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/31/ubuntu-and-typora/" class="post-title-link" itemprop="url">在Ubuntu上安装Typora（2021.3，Ubuntu 16.04）</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-03-31 18:00:00 / 修改时间：23:07:39" itemprop="dateCreated datePublished" datetime="2021-03-31T18:00:00+08:00">2021-03-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/03/31/ubuntu-and-typora/" class="post-meta-item leancloud_visitors" data-flag-title="在Ubuntu上安装Typora（2021.3，Ubuntu 16.04）" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/03/31/ubuntu-and-typora/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/31/ubuntu-and-typora/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1、通过官方给的软件源安装"><a href="#1、通过官方给的软件源安装" class="headerlink" title="1、通过官方给的软件源安装"></a>1、通过官方给的软件源安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将typora仓库的key添加到你的apt-key中</span></span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line"><span class="comment"># 在你的软件源里添加typora仓库</span></span><br><span class="line">sudo add-apt-repository <span class="string">&#x27;deb https://typora.io/linux ./&#x27;</span></span><br><span class="line"><span class="comment"># 更新软件源列表，安装typora</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
-
-<p>大多数人都会卡在这里，因为<a target="_blank" rel="noopener" href="https://typora.io/">https://typora.io</a> 这个服务器在国外，除非有映射到socks5协议，命令行工具可以使用的代理才能下载下来这个软件包。相关配置很麻烦，而且不适合在博客里写，所以有兴趣可以想办法百度或者Google。如果你已经跟着官网运行了上面的命令行不知道怎么办了的话，可以通过下面的操作解决一些问题：</p>
-<ul>
-<li>清除安装不完全的Typora包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果正在下载中，可以通过Ctrl+C强制退出</span></span><br><span class="line">sudo apt autoclean</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除Typora的仓库，以免以后软件源更新的时候出问题</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是不是很熟，更换国内源的时候也是在这里，当然Ubuntu有更简便的方式</span></span><br><span class="line">sudo vim etc/apt/sources.list</span><br><span class="line"><span class="comment"># 删除最下面几行有typora的链接</span></span><br><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/31/ubuntu-and-typora/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+  </div>
   
   
   
-
 
   
 
