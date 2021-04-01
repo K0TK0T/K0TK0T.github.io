@@ -28,7 +28,7 @@
 <meta property="og:description" content="1、安装NexT主题与个人信息配置 安装  1234cd bloggit clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;nextvim _config.yml:%s&#x2F;landscape&#x2F;next   个人信息配置（其他的个人信息在项目根目录的_config.yml下）  1vim themes&#x2F;next&#x2F;_config.yml">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-01T07:12:53.000Z">
-<meta property="article:modified_time" content="2021-04-01T13:59:11.207Z">
+<meta property="article:modified_time" content="2021-04-01T15:06:00.063Z">
 <meta property="article:author" content="Kotori">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="blog">
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-01 15:12:53 / 修改时间：21:59:11" itemprop="dateCreated datePublished" datetime="2021-04-01T15:12:53+08:00">2021-04-01</time>
+              <time title="创建时间：2021-04-01 15:12:53 / 修改时间：23:06:00" itemprop="dateCreated datePublished" datetime="2021-04-01T15:12:53+08:00">2021-04-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,37 +279,41 @@
 <ol>
 <li>favicon（也就是显示在你的浏览器标签页左边的小图标）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br><span class="line">  #android_manifest: &#x2F;images&#x2F;manifest.json</span><br><span class="line">  #ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>favicon:<br> small: /images/favicon-16x16-next.png<br> medium: /images/favicon-32x32-next.png<br> apple_touch_icon: /images/apple-touch-icon-next.png<br> safari_pinned_tab: /images/logo.svg<br> #android_manifest: /images/manifest.json<br> #ms_browserconfig: /images/browserconfig.xml</p>
+</blockquote>
 <span id="more"></span>
 
 <ol start="2">
 <li>scheme（next的主题样式，注意第三个Pisces可能部署不了，尽量不要选，前两个主题不是平铺，一言难尽…）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>#scheme: Muse<br>#scheme: Mist<br>#scheme: Pisces<br>scheme: Gemini</p>
+</blockquote>
 <ol start="3">
 <li>avatar（侧边栏头像）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: #&#x2F;images&#x2F;avatar.gif</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: false</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: false</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>avatar:<br> #Replace the default image and set the url here.<br> url: #/images/avatar.gif<br> #If true, the avatar will be dispalyed in circle.<br> rounded: false<br> #If true, the avatar will be rotated with the cursor.<br> rotated: false</p>
+</blockquote>
 <ol start="4">
 <li>social（社交链接，比如说github、csdn、简书、qq等等，后面的图标可以在<a target="_blank" rel="noopener" href="https://fontawesome.com/icons">这里</a>找，改||后的内容就好）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  #GitHub: https:&#x2F;&#x2F;github.com&#x2F;yourname || fab fa-github</span><br><span class="line">  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  #FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br><span class="line">  CSDN: https:&#x2F;&#x2F;www.csdn.net&#x2F;yourname || fab fa-cuttlefish</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>social:<br> #GitHub: <a target="_blank" rel="noopener" href="https://github.com/yourname">https://github.com/yourname</a> || fab fa-github<br> #E-Mail: mailto:<a href="mailto:&#121;&#x6f;&#x75;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#121;&#x6f;&#x75;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a> || fa fa-envelope<br> #Weibo: <a target="_blank" rel="noopener" href="https://weibo.com/yourname">https://weibo.com/yourname</a> || fab fa-weibo<br> #Google: <a target="_blank" rel="noopener" href="https://plus.google.com/yourname">https://plus.google.com/yourname</a> || fab fa-google<br> #Twitter: <a target="_blank" rel="noopener" href="https://twitter.com/yourname">https://twitter.com/yourname</a> || fab fa-twitter<br> #FB Page: <a target="_blank" rel="noopener" href="https://www.facebook.com/yourname">https://www.facebook.com/yourname</a> || fab fa-facebook<br> #StackOverflow: <a target="_blank" rel="noopener" href="https://stackoverflow.com/yourname">https://stackoverflow.com/yourname</a> || fab fa-stack-overflow<br> #YouTube: <a target="_blank" rel="noopener" href="https://youtube.com/yourname">https://youtube.com/yourname</a> || fab fa-youtube<br> #Instagram: <a target="_blank" rel="noopener" href="https://instagram.com/yourname">https://instagram.com/yourname</a> || fab fa-instagram<br> #Skype: skype:yourname?call|chat || fab fa-skype<br> CSDN: <a target="_blank" rel="noopener" href="https://www.csdn.net/yourname">https://www.csdn.net/yourname</a> || fab fa-cuttlefish</p>
+</blockquote>
 <ol start="5">
 <li>footer（尾注，显示你的版权信息等等，把powered设置为false可以不显示Powered by Hexo &amp; NexT，也可以定制下面那个心型小图标）</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  # Specify the date when the site was setup. If not defined, current year will be used.</span><br><span class="line">  #since: 2015</span><br><span class="line">  # Icon between year and copyright info.</span><br><span class="line">  icon:</span><br><span class="line">    # Icon name in Font Awesome. See: https:&#x2F;&#x2F;fontawesome.com&#x2F;icons</span><br><span class="line">    name: fa fa-heart</span><br><span class="line">    # If you want to animate the icon, set it to true.</span><br><span class="line">    animated: false</span><br><span class="line">    # Change the color of icon, using Hex Code.</span><br><span class="line">    color: &quot;#ff0000&quot;</span><br><span class="line">  # If not defined, &#96;author&#96; from Hexo &#96;_config.yml&#96; will be used.</span><br><span class="line">  copyright:</span><br><span class="line">  # Powered by Hexo &amp; NexT</span><br><span class="line">  powered: true</span><br></pre></td></tr></table></figure>
-
-
-
+<blockquote>
+<p>footer:<br> #Specify the date when the site was setup. If not defined, current year will be used.<br> #since: 2015<br> #Icon between year and copyright info.<br> icon:<br>   #Icon name in Font Awesome. See: <a target="_blank" rel="noopener" href="https://fontawesome.com/icons">https://fontawesome.com/icons</a><br>   name: fa fa-heart<br>   #If you want to animate the icon, set it to true.<br>   animated: false<br>   #Change the color of icon, using Hex Code.<br>   color: “#ff0000”<br> #If not defined, <code>author</code> from Hexo <code>_config.yml</code> will be used.<br> copyright:<br> #Powered by Hexo &amp; NexT<br> powered: true</p>
+</blockquote>
 <h3 id="2、添加标签和分类等侧边栏"><a href="#2、添加标签和分类等侧边栏" class="headerlink" title="2、添加标签和分类等侧边栏"></a>2、添加标签和分类等侧边栏</h3><ul>
 <li>修改themes/next/_config.yml，把需要的项目前面的注释取消，图标不满意依然可以在<a target="_blank" rel="noopener" href="https://fontawesome.com/icons">这里</a>找。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  #about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  #tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  #categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-gamepad</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>menu:<br> home: / || fa fa-home<br> #about: /about/ || fa fa-user<br> #tags: /tags/ || fa fa-tags<br> #categories: /categories/ || fa fa-th<br> archives: /archives/ || fa fa-gamepad<br> #schedule: /schedule/ || fa fa-calendar<br> #sitemap: /sitemap.xml || fa fa-sitemap<br> #commonweal: /404/ || fa fa-heartbeat</p>
+</blockquote>
 <ul>
 <li>创建对应的文件夹和index.md，比如about，运行下面的命令可以自动创建这些。</li>
 </ul>
@@ -318,16 +322,16 @@
 <ul>
 <li>特殊的tags和categories只要在front-matter部分加上这一行就会自动生成，不需要多加什么。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: tags</span><br><span class="line"># type: categories</span><br></pre></td></tr></table></figure>
-
-
-
+<blockquote>
+<p>type: tags<br>#type: categories</p>
+</blockquote>
 <h3 id="3、通过Leancloud给博客添加浏览量统计功能和评论功能"><a href="#3、通过Leancloud给博客添加浏览量统计功能和评论功能" class="headerlink" title="3、通过Leancloud给博客添加浏览量统计功能和评论功能"></a>3、通过Leancloud给博客添加浏览量统计功能和评论功能</h3><p>在<a target="_blank" rel="noopener" href="https://www.leancloud.cn/">leancloud</a>建立两个应用，分别命名为counter和quote，前者是浏览量统计，后者是评论。在两个应用的setting-&gt;app keys可以找到它们的AppID和AppKey。</p>
 <ul>
 <li>leancloud浏览量统计</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">leancloud_visitors:</span><br><span class="line">  enable: false</span><br><span class="line">  app_id: # &lt;your app id&gt;</span><br><span class="line">  app_key: # &lt;your app key&gt;</span><br><span class="line">  # Required for apps from CN region</span><br><span class="line">  server_url: # &lt;your server url&gt;</span><br><span class="line">  # Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-leancloud-counter-security</span><br><span class="line">  # If you don&#39;t care about security in leancloud counter and just want to use it directly</span><br><span class="line">  # (without hexo-leancloud-counter-security plugin), set &#96;security&#96; to &#96;false&#96;.</span><br><span class="line">  security: true</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>leancloud_visitors:<br> enable: false<br> app_id: #<your app id><br> app_key: #<your app key><br> #Required for apps from CN region<br> server_url: # <your server url><br> #Dependencies: <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-leancloud-counter-security">https://github.com/theme-next/hexo-leancloud-counter-security</a><br> #If you don’t care about security in leancloud counter and just want to use it directly<br> #(without hexo-leancloud-counter-security plugin), set <code>security</code> to <code>false</code>.<br> security: true</p>
+</blockquote>
 <ol>
 <li>将enable设置为true</li>
 <li>将counter应用的appid和appkey填进去</li>
@@ -337,8 +341,9 @@
 <ul>
 <li>Valine评论功能</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Valine</span><br><span class="line"># For more information: https:&#x2F;&#x2F;valine.js.org, https:&#x2F;&#x2F;github.com&#x2F;xCss&#x2F;Valine</span><br><span class="line">valine:</span><br><span class="line">  enable: false</span><br><span class="line">  appid: # Your leancloud application appid</span><br><span class="line">  appkey: # Your leancloud application appkey</span><br><span class="line">  notify: false # Mail notifier</span><br><span class="line">  verify: false # Verification code</span><br><span class="line">  placeholder: Just go go # Comment box placeholder</span><br><span class="line">  avatar: mm # Gravatar style</span><br><span class="line">  guest_info: nick,mail,link # Custom comment header</span><br><span class="line">  pageSize: 10 # Pagination size</span><br><span class="line">  language: # Language, available values: en, zh-cn</span><br><span class="line">  visitor: false # Article reading statistic</span><br><span class="line">  comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">  recordIP: false # Whether to record the commenter IP</span><br><span class="line">  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span><br><span class="line">  #post_meta_order: 0</span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>#Valine<br>#For more information: <a target="_blank" rel="noopener" href="https://valine.js.org/">https://valine.js.org</a>, <a target="_blank" rel="noopener" href="https://github.com/xCss/Valine">https://github.com/xCss/Valine</a><br>valine:<br> enable: false<br> appid: #Your leancloud application appid<br> appkey: #Your leancloud application appkey<br> notify: false #Mail notifier<br> verify: false #Verification code<br> placeholder: Just go go #Comment box placeholder<br> avatar: mm #Gravatar style<br> guest_info: nick,mail,link # Custom comment header<br> pageSize: 10 # Pagination size<br> language: #Language, available values: en, zh-cn<br> visitor: false #Article reading statistic<br> comment_count: true #If false, comment count will only be displayed in post page, not in home page<br> recordIP: false #Whether to record the commenter IP<br> serverURLs: #When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)<br> #post_meta_order: 0</p>
+</blockquote>
 <ol>
 <li>将enable设置为true</li>
 <li>将应用quote的appid和appkey填进去</li>
@@ -347,16 +352,15 @@
 <h3 id="4、添加置顶功能"><a href="#4、添加置顶功能" class="headerlink" title="4、添加置顶功能"></a>4、添加置顶功能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm remove hexo-generator-index</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果想给置顶贴加一个置顶标志</span></span><br><span class="line">vim /blog/themes/next/layout/_macro/post.swig</span><br></pre></td></tr></table></figure>
 
 <p>在<code>&lt;div class=&quot;post-meta&quot;&gt;</code>标签内添加下面的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class&#x3D;&quot;fa fa-thumb-tack&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">    &lt;font color&#x3D;green&gt;置顶&lt;&#x2F;font&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;post-meta-divider&quot;&gt;|&lt;&#x2F;span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-thumb-tack&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">green</span>&gt;</span>置顶<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-divider&quot;</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
 <p>使用置顶功能的方法是在文章的front-matter部分加上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">top: true</span><br><span class="line"># 或者数字，数字越大，优先级越高</span><br><span class="line">top: 5</span><br></pre></td></tr></table></figure>
-
-
-
+<blockquote>
+<p>top: true<br>#或者数字，数字越大，优先级越高<br>top: 5</p>
+</blockquote>
 <h3 id="6、添加站内搜索"><a href="#6、添加站内搜索" class="headerlink" title="6、添加站内搜索"></a>6、添加站内搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br><span class="line">vim /themes/next/_config.yml</span><br></pre></td></tr></table></figure>
 
-<p>把local_search的enable选项设置为true，<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-generator-searchdb">这里</a>有它的进一步设置。</p>
+<p>将local_search的enable选项设置为true</p>
 <h3 id="7、其他小技巧"><a href="#7、其他小技巧" class="headerlink" title="7、其他小技巧"></a>7、其他小技巧</h3><ol>
 <li><p>themes/next/_config.yml的motion标签设置为false可以禁用动画效果，节省加载时间。</p>
 </li>
@@ -366,9 +370,15 @@
 </li>
 </ol>
 <ul>
-<li>取消next/_config.yml这一行的注释，给fa fa-user换个图标<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#about: &#x2F;about&#x2F; || fa fa-user</span><br></pre></td></tr></table></figure></li>
-<li>将next/languages/zh-CN.yml里about的翻译改成你想要的</li>
-<li>新建blog/source/about/index.md，可以在里面写你想写的内容<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure></li>
+<li><p>取消next/_config.yml这一行的注释，给fa fa-user换个图标</p>
+<blockquote>
+<p>#about: /about/ || fa fa-user</p>
+</blockquote>
+</li>
+<li><p>将next/languages/zh-CN.yml里about的翻译改成你想要的</p>
+</li>
+<li><p>新建blog/source/about/index.md，可以在里面写你想写的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
