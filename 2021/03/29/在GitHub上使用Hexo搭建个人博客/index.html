@@ -20,30 +20,35 @@
     var CONFIG = {"hostname":"k0tk0t.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一名 @湖南大学 普通大学生，兴趣是Linux、UTAU和各类游戏机">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kotkot的技术博客">
-<meta property="og:url" content="https://k0tk0t.github.io/index.html">
+  <meta name="description" content="如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）">
+<meta property="og:url" content="https://k0tk0t.github.io/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="kotkot的技术博客">
-<meta property="og:description" content="一名 @湖南大学 普通大学生，兴趣是Linux、UTAU和各类游戏机">
+<meta property="og:description" content="如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-29T10:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-13T04:49:41.814Z">
 <meta property="article:author" content="kotkot">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://k0tk0t.github.io/">
+<link rel="canonical" href="https://k0tk0t.github.io/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>kotkot的技术博客</title>
+  <title>在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b） | kotkot的技术博客</title>
   
 
 
@@ -185,195 +190,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://k0tk0t.github.io/2022/05/12/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E7%BD%91%E7%AB%99%E5%AF%BC%E8%A7%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="kotkot">
-      <meta itemprop="description" content="一名 <a target="_blank" rel="noopener" href="https://www.hnu.edu.cn/">@湖南大学</a> 普通大学生，兴趣是Linux、UTAU和各类游戏机">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kotkot的技术博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/12/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E7%BD%91%E7%AB%99%E5%AF%BC%E8%A7%88/" class="post-title-link" itemprop="url">注意事项与网站导览</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-            <i class="fa fa-thumb-tack"></i>
-            <font color=green>置顶</font>
-            <span class="post-meta-divider">|</span>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-12 18:10:32" itemprop="dateCreated datePublished" datetime="2022-05-12T18:10:32+08:00">2022-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-13 12:28:31" itemprop="dateModified" datetime="2022-05-13T12:28:31+08:00">2022-05-13</time>
-              </span>
-
-          
-            <span id="/2022/05/12/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E7%BD%91%E7%AB%99%E5%AF%BC%E8%A7%88/" class="post-meta-item leancloud_visitors" data-flag-title="注意事项与网站导览" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1、本博客中的内容未经允许禁止转载，联系方式在左侧下方，邮箱<a href="mailto:&#x79;&#x75;&#x79;&#117;&#49;&#x31;&#49;&#x38;&#49;&#51;&#64;&#x31;&#x36;&#x33;&#46;&#x63;&#111;&#x6d;">&#x79;&#x75;&#x79;&#117;&#49;&#x31;&#49;&#x38;&#49;&#51;&#64;&#x31;&#x36;&#x33;&#46;&#x63;&#111;&#x6d;</a>。</p>
-<p>这样规定是因为以前写的很多CSDN和博客园的博客被照着原样到处搬，既然国内访问没有问题丢进收藏夹就能解决的问题为什么要重新上传一遍呢，上传同样的没有任何思考的内容有什么意义呢，我个人是非常看不惯这种做法的。</p>
-<p>2、另外如果是来找UTAU教程的话大概是走串门了，这里是技术类博文，可以点击<a target="_blank" rel="noopener" href="http://kotkot.club/">这儿</a>返回。</p>
-<h3 id="网站导览"><a href="#网站导览" class="headerlink" title="网站导览"></a>网站导览</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://k0tk0t.github.io/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="kotkot">
-      <meta itemprop="description" content="一名 <a target="_blank" rel="noopener" href="https://www.hnu.edu.cn/">@湖南大学</a> 普通大学生，兴趣是Linux、UTAU和各类游戏机">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kotkot的技术博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Hexo的进一步配置与使用</a>
-        </h2>
-
-        <div class="post-meta">
-          
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-01 15:12:53" itemprop="dateCreated datePublished" datetime="2021-04-01T15:12:53+08:00">2021-04-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-13 12:48:06" itemprop="dateModified" datetime="2022-05-13T12:48:06+08:00">2022-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo的进一步配置与使用" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Hexo博客可以访问后的进一步配置，比如网站信息、博客结构、主题设置</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -389,10 +209,9 @@
       <meta itemprop="name" content="kotkot的技术博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）
+        </h1>
 
         <div class="post-meta">
           
@@ -454,36 +273,150 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <p>如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了</p>
+<span id="more"></span>
+<h3 id="1、Git，GitHub和Hexo"><a href="#1、Git，GitHub和Hexo" class="headerlink" title="1、Git，GitHub和Hexo"></a>1、Git，GitHub和Hexo</h3><ul>
+<li><strong>Git</strong></li>
+</ul>
+<p>Git是一个版本控制系统，它安装在你的计算机上，用于管理工程。比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用可以做到跨平台同步和多人协作。</p>
+<ul>
+<li><strong>GitHub</strong></li>
+</ul>
+<p>Git项目托管平台，支持Git作为唯一的版本库格式进行托管。GitHub中的每一个repository都对应一个Git仓库（也就是初始化过，文件夹下有.git的目录），通过pull、push等操作和主机进行数据交换。</p>
+<ul>
+<li><strong>Hexo</strong></li>
+</ul>
+<p>静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就运行<code>hexo generate &amp; hexo deploy</code>。</p>
+<ul>
+<li>node.js</li>
+</ul>
+<p>基于Chrome V8的JavaScript Runtime，Hexo的运行环境，一起安装的npm是一个相当强大的软件包管理器。</p>
+<ul>
+<li>Markdown</li>
+</ul>
+<p>一种文本标记语言，可以说在HTML顶层，兼容HTML语法。Mrakdown语法简洁，并且易于阅读和维护，毕竟写博客的时候一大堆HTML标签的排版问题会让人很头疼。Mrakdown最终还是翻译为HTML显示在网站中。</p>
+<h3 id="2、它们如何协作"><a href="#2、它们如何协作" class="headerlink" title="2、它们如何协作"></a>2、它们如何协作</h3><p>简言之就是Git用来管理Hexo项目以及把它生成的静态网页发送到GitHub上，然后由GitHub托管你的博客网站。</p>
+<p>GitHub有一个很好用的功能，就是可以用username.github.io作为域名访问username.github.io.git仓库下的网站。最简单的玩法，在你的GitHub账户中建立名字为username.github.io的仓库，push进去index.html，访问username.github.io出现的就是index.html的页面。如果换一个浪漫一点的域名，在网页上画一个爱心，甚至能用来表白 orz。</p>
+<h3 id="3、安装Hexo，生成博客框架"><a href="#3、安装Hexo，生成博客框架" class="headerlink" title="3、安装Hexo，生成博客框架"></a>3、安装Hexo，生成博客框架</h3><p>这一部分<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官网文档</a>有详细说明，不同操作系统可以自己查找。<br>这里是linux nodejs发行版本网址<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">nodesourse</a>。</p>
+<ul>
+<li>安装node.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装Hexo</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成网站框架,在blog/public下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/blog &amp; <span class="built_in">cd</span> ~/blog</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置_config.yml参数，主要是#Site部分。这些会显示在你的博客首页。</li>
+</ul>
+<blockquote>
+<p>title: Blabla<br>subtitle: ‘’<br>description: ‘’<br>keywords:<br>author: blabla<br>language: zh-CN #！<br>timezone: ‘Asia/Shanghai’ #！</p>
+</blockquote>
+<ul>
+<li>本地测试，这时应该显示默认主题landscape和/source/_posts下的hello-world.md。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">curl http://localhost:4000  <span class="comment">#或者直接浏览器访问</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4、安装Git，设置GitHub，部署静态网页"><a href="#4、安装Git，设置GitHub，部署静态网页" class="headerlink" title="4、安装Git，设置GitHub，部署静态网页"></a>4、安装Git，设置GitHub，部署静态网页</h3><ul>
+<li>安装Git并设置本地用户名和密码（这和你的GitHub账号无关，但是还是要设置之后才能传输文件到远程库，代表是谁提交的修改）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email “email@example.com”</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在GitHub建立远程仓库username.github.io（Your repositories -&gt; new，repository name填username.github.io）</li>
+<li>与远程仓库建立连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<p>将.ssh/id_rsa.pub里的内容粘贴到GitHub的Settings-&gt;SSH and GPG keys-&gt;new SSH key里保存。</p>
+<ul>
+<li>设置_config.yml，更改url和deploy部分，使得hexo能部署到你的GitHub页面。</li>
+</ul>
+<blockquote>
+<p>url: <a target="_blank" rel="noopener" href="https://github.username.io/">https://github.username.io</a></p>
+<p>deploy:<br>   type: git<br>   repo: <a target="_blank" rel="noopener" href="https://github.com/username/username.github.io">https://github.com/username/username.github.io</a><br>   branch: main</p>
+</blockquote>
+<ul>
+<li>安装部署工具，部署网页，这一步完成博客就算建好了，可以通过域名访问。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>其实hexo的部署分为两种方法：</p>
+<p>一种是通过本地仓库部署，就是上面介绍的那种方法，hexo项目储存在本机，并且从本机发布。我是为了省事，把仓库作为github pages的分支设置为main，并且部署也是在main分支上部署。管理文件的方法是在_posts文件夹建立一个git仓库并push到github上，这样的好处是新安装插件之后不需要折腾travis ci的配置文件、同步的内容少、项目可以保持私密，当然坏处是如果发布博客的主机出了问题那所有的主题样式都泡汤了。</p>
+<p>另一种是公有仓库部署，在官方文档里有介绍。通过travis ci与github协作，github.username.io的main分支用于托管项目，gh-pages分支用于发布博客界面，travis ci则负责在你每次push的时候将main分支的项目生成静态网页发布到gh-pages分支。这样的好处是省事，不需要每次都手动重新编译博客再发布出去，但是坏处很多，一个是travis ci国内无法登录，需要梯子，另一个是官方关于这种方法的文档全部都过时了漏洞百出，比如分支处理，还有一个就是远程主机的环境配置很麻烦，比如置顶插件的安装。</p>
+<p>综上，我还是选择了本地部署。</p>
+</blockquote>
+<p>5、安装主题，撰写博客</p>
+<p>这一部分就比较轻松，Hexo的主题<a target="_blank" rel="noopener" href="https://hexo.io/themes/">在这</a>，大部分的主题在他们的代码仓库里找就能找到，方法就是把域名（username.github.io）里的username放到github.com/username里直接访问就好，基本上都有安装说明。大致步骤<code>git clone xxx.git ~/blog/themes/xxx</code>，<code>npm install</code>，再在_config.yml设置主题<code>theme: xxx</code>。</p>
+<p>写博客和前面说的一样，写好markdown放在blog/source/_post下，或者运行<code>hexo new &quot;new-file-name&quot;</code>也行（想要删除帖子直接把md文件删除就好），全部整理好之后<code>hexo generate &amp; hexo deploy</code>，过半分钟再去看就更新了。最要注意的地方是<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">front-matter</a>。</p>
+<h3 id="6、常用命令合集"><a href="#6、常用命令合集" class="headerlink" title="6、常用命令合集"></a>6、常用命令合集</h3><p>整理了一些写博客时常用的命令。</p>
+<ul>
+<li>Hexo初始化</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init [dir]</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装主题</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> <span class="string">&quot;xxx.git&quot;</span> ~/blog/xxx</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>部署网站</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line"><span class="comment">#hexo server</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>管理Git仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email “email@example.com”</span><br><span class="line">git remote add origin <span class="string">&quot;xxx.git&quot;</span></span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
+              <a href="/tags/github/" rel="tag"># github</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="next" title="Hexo的进一步配置与使用">
+      Hexo的进一步配置与使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
 
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -530,6 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Git%EF%BC%8CGitHub%E5%92%8CHexo"><span class="nav-number">1.</span> <span class="nav-text">1、Git，GitHub和Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%AE%83%E4%BB%AC%E5%A6%82%E4%BD%95%E5%8D%8F%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">2、它们如何协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E5%AE%89%E8%A3%85Hexo%EF%BC%8C%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6"><span class="nav-number">3.</span> <span class="nav-text">3、安装Hexo，生成博客框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%AE%89%E8%A3%85Git%EF%BC%8C%E8%AE%BE%E7%BD%AEGitHub%EF%BC%8C%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5"><span class="nav-number">4.</span> <span class="nav-text">4、安装Git，设置GitHub，部署静态网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86"><span class="nav-number">5.</span> <span class="nav-text">6、常用命令合集</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

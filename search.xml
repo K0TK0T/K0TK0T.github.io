@@ -10,9 +10,417 @@
 
 这样规定是因为以前写的很多CSDN和博客园的博客被照着原样到处搬，既然国内访问没有问题丢进收藏夹就能解决的问题为什么要重新上传一遍呢，上传同样的没有任何思考的内容有什么意义呢，我个人是非常看不惯这种做法的。
 
-2、另外如果是来找UTAU教程的话大概是走串门了，这里是技术类博文，可以点击[这里](http://kotkot.club/)返回。
+2、另外如果是来找UTAU教程的话大概是走串门了，这里是技术类博文，可以点击[这儿](http://kotkot.club/)返回。
 
 ### 网站导览
 ]]></content>
+  </entry>
+  <entry>
+    <title>Hexo的进一步配置与使用</title>
+    <url>/2021/04/01/Hexo%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[Hexo博客可以访问后的进一步配置，比如网站信息、博客结构、主题设置
+<!--more-->
+### 1、安装[NexT](https://github.com/theme-next/hexo-theme-next)主题与个人信息配置
+
+* 安装
+
+```bash
+cd blog
+git clone https://github.com/theme-next/hexo-theme-next themes/next
+vim _config.yml
+:%s/landscape/next
+```
+
+* 个人信息配置（其他的个人信息在项目根目录的_config.yml下）
+
+```bash
+vim themes/next/_config.yml
+```
+
+1. favicon（也就是显示在你的浏览器标签页左边的小图标）
+
+>favicon:
+>  small: /images/favicon-16x16-next.png
+>  medium: /images/favicon-32x32-next.png
+>  apple_touch_icon: /images/apple-touch-icon-next.png
+>  safari_pinned_tab: /images/logo.svg
+>  #android_manifest: /images/manifest.json
+>  #ms_browserconfig: /images/browserconfig.xml
+
+2. scheme（next的主题样式，注意第三个Pisces可能部署不了，尽量不要选，前两个主题不是平铺，一言难尽...）
+
+>#scheme: Muse
+>#scheme: Mist
+>#scheme: Pisces
+>scheme: Gemini
+
+3. avatar（侧边栏头像）
+
+>avatar:
+>  #Replace the default image and set the url here.
+>  url: #/images/avatar.gif
+>  #If true, the avatar will be dispalyed in circle.
+>  rounded: false
+>  #If true, the avatar will be rotated with the cursor.
+>  rotated: false
+
+4. social（社交链接，比如说github、csdn、简书、qq等等，后面的图标可以在[这里](https://fontawesome.com/icons)找，改||后的内容就好）
+
+>social:
+>  #GitHub: https://github.com/yourname || fab fa-github
+>  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+>  #Weibo: https://weibo.com/yourname || fab fa-weibo
+>  #Google: https://plus.google.com/yourname || fab fa-google
+>  #Twitter: https://twitter.com/yourname || fab fa-twitter
+>  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
+>  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
+>  #YouTube: https://youtube.com/yourname || fab fa-youtube
+>  #Instagram: https://instagram.com/yourname || fab fa-instagram
+>  #Skype: skype:yourname?call|chat || fab fa-skype
+>  CSDN: https://www.csdn.net/yourname || fab fa-cuttlefish
+
+5. footer（尾注，显示你的版权信息等等，把powered设置为false可以不显示Powered by Hexo & NexT，也可以定制下面那个心型小图标）
+
+>footer:
+>  #Specify the date when the site was setup. If not defined, current year will be used.
+>  #since: 2015
+>  #Icon between year and copyright info.
+>  icon:
+>    #Icon name in Font Awesome. See: https://fontawesome.com/icons
+>    name: fa fa-heart
+>    #If you want to animate the icon, set it to true.
+>    animated: false
+>    #Change the color of icon, using Hex Code.
+>    color: "#ff0000"
+>  #If not defined, `author` from Hexo `_config.yml` will be used.
+>  copyright:
+>  #Powered by Hexo & NexT
+>  powered: true
+
+
+
+### 2、添加标签和分类等侧边栏
+
+* 修改themes/next/_config.yml，把需要的项目前面的注释取消，图标不满意依然可以在[这里](https://fontawesome.com/icons)找。
+
+>menu:
+>  home: / || fa fa-home
+>  #about: /about/ || fa fa-user
+>  #tags: /tags/ || fa fa-tags
+>  #categories: /categories/ || fa fa-th
+>  archives: /archives/ || fa fa-gamepad
+>  #schedule: /schedule/ || fa fa-calendar
+>  #sitemap: /sitemap.xml || fa fa-sitemap
+>  #commonweal: /404/ || fa fa-heartbeat
+
+* 创建对应的文件夹和index.md，比如about，运行下面的命令可以自动创建这些。
+
+```bash
+hexo new page about
+```
+
+* 特殊的tags和categories只要在front-matter部分加上这一行就会自动生成，不需要多加什么。
+
+>type: tags
+>#type: categories
+
+
+
+### 3、通过Leancloud给博客添加浏览量统计功能和评论功能
+
+在[leancloud](https://www.leancloud.cn/)建立两个应用，分别命名为counter和quote，前者是浏览量统计，后者是评论。在两个应用的setting->app keys可以找到它们的AppID和AppKey。
+
+* leancloud浏览量统计
+
+>leancloud_visitors:
+>  enable: false
+>  app_id: #<your app id>
+>  app_key: #<your app key>
+>  #Required for apps from CN region
+>  server_url: # <your server url>
+>  #Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+>  #If you don't care about security in leancloud counter and just want to use it directly
+>  #(without hexo-leancloud-counter-security plugin), set `security` to `false`.
+>  security: true
+
+1. 将enable设置为true
+2. 将counter应用的appid和appkey填进去
+3. 解决依赖插件，`npm install hexo-leancloud-counter-security --save `
+4. 将security设置为false
+
+
+
+* Valine评论功能
+
+>#Valine
+>#For more information: https://valine.js.org, https://github.com/xCss/Valine
+>valine:
+>  enable: false
+>  appid: #Your leancloud application appid
+>  appkey: #Your leancloud application appkey
+>  notify: false #Mail notifier
+>  verify: false #Verification code
+>  placeholder: Just go go #Comment box placeholder
+>  avatar: mm #Gravatar style
+>  guest_info: nick,mail,link # Custom comment header
+>  pageSize: 10 # Pagination size
+>  language: #Language, available values: en, zh-cn
+>  visitor: false #Article reading statistic
+>  comment_count: true #If false, comment count will only be displayed in post page, not in home page
+>  recordIP: false #Whether to record the commenter IP
+>  serverURLs: #When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+>  #post_meta_order: 0
+
+1. 将enable设置为true
+2. 将应用quote的appid和appkey填进去
+3. 下面看着设置，一般要把language设置为zh-cn
+
+
+
+### 4、添加置顶功能
+
+```bash
+npm remove hexo-generator-index
+npm install hexo-generator-index-pin-top --save
+
+# 如果想给置顶贴加一个置顶标志
+vim /blog/themes/next/layout/_macro/post.swig
+```
+
+在`<div class="post-meta">`标签内添加下面的内容
+
+```html
+{% if post.top %}
+    <i class="fa fa-thumb-tack"></i>
+    <font color=green>置顶</font>
+    <span class="post-meta-divider">|</span>
+{% endif %}
+```
+
+使用置顶功能的方法是在文章的front-matter部分加上
+
+>top: true
+>#或者数字，数字越大，优先级越高
+>top: 5
+
+
+
+### 6、添加站内搜索
+
+```bash
+npm install hexo-generator-searchdb
+vim /themes/next/_config.yml
+```
+
+将local_search的enable选项设置为true
+
+
+
+### 7、其他小技巧
+
+1. themes/next/_config.yml的motion标签设置为false可以禁用动画效果，节省加载时间。
+
+2. themes/next/_config.yml的font标签可以设置博客各部分的字体。
+
+3. 一个投机取巧增加自定义侧边栏的方法，拿about举例：
+* 取消next/_config.yml这一行的注释，给fa fa-user换个图标
+
+
+> #about: /about/ || fa fa-user
+
+* 将next/languages/zh-CN.yml里about的翻译改成你想要的
+* 新建blog/source/about/index.md，可以在里面写你想写的内容
+
+
+```bash
+hexo new page about
+```
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）</title>
+    <url>/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了
+<!--more-->
+### 1、Git，GitHub和Hexo
+
+* **Git**
+
+Git是一个版本控制系统，它安装在你的计算机上，用于管理工程。比如电脑上有一个正在开发的项目，怕它出点什么意外损坏丢失，就可以把它初始化为一个Git仓库，这样Git就可以保存它的历史版本，同时可以在保留主分支的情况下切换到其他分支工作。Git不仅可以用来管理代码，还可以用来管理其他的文件，比如照片office文档等等，和GitHub等托管网站一起使用可以做到跨平台同步和多人协作。
+
+* **GitHub**
+
+Git项目托管平台，支持Git作为唯一的版本库格式进行托管。GitHub中的每一个repository都对应一个Git仓库（也就是初始化过，文件夹下有.git的目录），通过pull、push等操作和主机进行数据交换。
+
+* **Hexo**
+
+静态博客网站生成器，注意是生成器，不是框架，直接把它push到username/username.github.io.git是不会显示网页的。可以把它想象成一个博客后台，写完mrakdown放在/sources/_posts/，想要发布就运行`hexo generate & hexo deploy`。
+
+* node.js
+
+基于Chrome V8的JavaScript Runtime，Hexo的运行环境，一起安装的npm是一个相当强大的软件包管理器。
+
+* Markdown
+
+一种文本标记语言，可以说在HTML顶层，兼容HTML语法。Mrakdown语法简洁，并且易于阅读和维护，毕竟写博客的时候一大堆HTML标签的排版问题会让人很头疼。Mrakdown最终还是翻译为HTML显示在网站中。
+
+### 2、它们如何协作
+简言之就是Git用来管理Hexo项目以及把它生成的静态网页发送到GitHub上，然后由GitHub托管你的博客网站。
+
+GitHub有一个很好用的功能，就是可以用username.github.io作为域名访问username.github.io.git仓库下的网站。最简单的玩法，在你的GitHub账户中建立名字为username.github.io的仓库，push进去index.html，访问username.github.io出现的就是index.html的页面。如果换一个浪漫一点的域名，在网页上画一个爱心，甚至能用来表白 orz。
+
+### 3、安装Hexo，生成博客框架
+这一部分[官网文档](https://hexo.io/zh-cn/docs/)有详细说明，不同操作系统可以自己查找。
+这里是linux nodejs发行版本网址[nodesourse](https://github.com/nodesource/distributions)。
+
+* 安装node.js
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+* 安装Hexo
+
+```bash
+npm install hexo-cli -g
+```
+
+* 生成网站框架,在blog/public下
+
+```bash
+mkdir ~/blog & cd ~/blog
+hexo init
+npm install
+```
+
+* 设置_config.yml参数，主要是#Site部分。这些会显示在你的博客首页。
+
+>title: Blabla
+>subtitle: ''
+>description: ''
+>keywords:
+>author: blabla
+>language: zh-CN #！
+>timezone: 'Asia/Shanghai' #！
+
+* 本地测试，这时应该显示默认主题landscape和/source/_posts下的hello-world.md。
+
+```bash
+hexo generate
+hexo server
+curl http://localhost:4000  #或者直接浏览器访问
+```
+
+### 4、安装Git，设置GitHub，部署静态网页
+
+* 安装Git并设置本地用户名和密码（这和你的GitHub账号无关，但是还是要设置之后才能传输文件到远程库，代表是谁提交的修改）
+
+```bash
+sudo apt install git
+git config --global user.name "Your Name"
+git config --global user.email “email@example.com”
+```
+
+* 在GitHub建立远程仓库username.github.io（Your repositories -> new，repository name填username.github.io）
+* 与远程仓库建立连接
+
+```bash
+ssh-keygen -t rsa
+```
+
+将.ssh/id_rsa.pub里的内容粘贴到GitHub的Settings->SSH and GPG keys->new SSH key里保存。
+
+* 设置_config.yml，更改url和deploy部分，使得hexo能部署到你的GitHub页面。
+
+>url: https://github.username.io
+>
+>deploy:
+>	type: git
+>	repo: https://github.com/username/username.github.io
+>	branch: main
+
+* 安装部署工具，部署网页，这一步完成博客就算建好了，可以通过域名访问。
+
+```bash
+npm install hexo-deployer-git --save
+hexo generate
+hexo deploy
+```
+
+
+
+>其实hexo的部署分为两种方法：
+>
+>一种是通过本地仓库部署，就是上面介绍的那种方法，hexo项目储存在本机，并且从本机发布。我是为了省事，把仓库作为github pages的分支设置为main，并且部署也是在main分支上部署。管理文件的方法是在_posts文件夹建立一个git仓库并push到github上，这样的好处是新安装插件之后不需要折腾travis ci的配置文件、同步的内容少、项目可以保持私密，当然坏处是如果发布博客的主机出了问题那所有的主题样式都泡汤了。
+>
+>另一种是公有仓库部署，在官方文档里有介绍。通过travis ci与github协作，github.username.io的main分支用于托管项目，gh-pages分支用于发布博客界面，travis ci则负责在你每次push的时候将main分支的项目生成静态网页发布到gh-pages分支。这样的好处是省事，不需要每次都手动重新编译博客再发布出去，但是坏处很多，一个是travis ci国内无法登录，需要梯子，另一个是官方关于这种方法的文档全部都过时了漏洞百出，比如分支处理，还有一个就是远程主机的环境配置很麻烦，比如置顶插件的安装。
+>
+>综上，我还是选择了本地部署。
+
+
+
+5、安装主题，撰写博客
+
+这一部分就比较轻松，Hexo的主题[在这](https://hexo.io/themes/)，大部分的主题在他们的代码仓库里找就能找到，方法就是把域名（username.github.io）里的username放到github.com/username里直接访问就好，基本上都有安装说明。大致步骤`git clone xxx.git ~/blog/themes/xxx`，`npm install`，再在_config.yml设置主题`theme: xxx`。
+
+写博客和前面说的一样，写好markdown放在blog/source/_post下，或者运行`hexo new "new-file-name"`也行（想要删除帖子直接把md文件删除就好），全部整理好之后`hexo generate & hexo deploy`，过半分钟再去看就更新了。最要注意的地方是[front-matter](https://hexo.io/zh-cn/docs/front-matter)。
+
+### 6、常用命令合集
+整理了一些写博客时常用的命令。
+
+* Hexo初始化
+
+```bash
+hexo init [dir]
+npm install
+```
+
+* 安装主题
+
+```bash
+git clone "xxx.git" ~/blog/xxx
+npm install
+```
+
+* 部署网站
+
+```bash
+hexo generate
+#hexo server
+hexo deploy
+```
+
+* 管理Git仓库
+
+```bash
+git init
+git status
+git add .
+git commit -m ""
+git config --global user.name "Your Name"
+git config --global user.email “email@example.com”
+git remote add origin "xxx.git"
+git pull
+git push
+```
+
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+        <tag>github</tag>
+      </tags>
   </entry>
 </search>
