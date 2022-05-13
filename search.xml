@@ -248,7 +248,7 @@ hexo new page about
   <entry>
     <title>在GitHub上使用Hexo搭建个人博客（2021.3，raspberry pi 4b）</title>
     <url>/2021/03/29/%E5%9C%A8GitHub%E4%B8%8A%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[如何使用Hexo生成静态博客并挂载到GitPages上，这样就可以拥有一个不受其他平台制约的博客网页了
+    <content><![CDATA[使用Hexo生成静态博客并挂载到GitPages上，拥有一个不受其他平台制约的博客网页
 <!--more-->
 ### 1、Git，GitHub和Hexo
 
