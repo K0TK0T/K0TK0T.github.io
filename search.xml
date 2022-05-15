@@ -8,13 +8,9 @@
 
 1、本博客中的内容未经允许禁止转载，联系方式在左侧下方，邮箱yuyu111813@163.com。
 
-这样规定是因为以前写的很多CSDN和博客园的博客被照着原样到处搬，既然国内访问没有问题丢进收藏夹就能解决的问题为什么要重新上传一遍呢，我个人是非常看不惯这种做法的。
+2、网站启用了书签功能，所以如果想休息一下可以先点一下右上角。
 
-2、UTAU教程站在[这里](http://kotkot.club/)，如果是寻找它的话大概是走串门了。
-
-3、网站启用了书签，退出后回来会跳转到上次阅读的位置，可以通过右下角的返回顶部重新阅读。
-
-4、网站启用了全站搜索功能，如果有某篇文章只记得关键词但是找不到位置，可以点击左侧的搜索查找。
+3、启用了全站搜索功能，如果有某篇文章找不到了但是记住了关键词，可以使用左边的搜索找找看。
 
 ### 网站导览
 ]]></content>
@@ -244,8 +240,8 @@ hexo new page about
         <category>blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>blog</tag>
+        <tag>hexo</tag>
         <tag>NexT</tag>
       </tags>
   </entry>
@@ -422,9 +418,9 @@ git push
         <category>blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>blog</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
