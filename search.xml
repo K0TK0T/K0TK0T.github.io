@@ -8,7 +8,7 @@
 
 1、本博客中的内容未经允许禁止转载，联系方式在左侧下方，邮箱yuyu111813@163.com。
 
-2、网站启用了书签功能，所以如果想休息一下可以先点一下右上角。
+2、网站启用了书签功能，所以如果想保留阅读进度，退出之前先点击一下右上角。
 
 3、启用了全站搜索功能，如果有某篇文章找不到了但是记住了关键词，可以使用左边的搜索找找看。
 
@@ -240,8 +240,8 @@ hexo new page about
         <category>blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>hexo</tag>
+        <tag>blog</tag>
         <tag>NexT</tag>
       </tags>
   </entry>
@@ -418,9 +418,9 @@ git push
         <category>blog</category>
       </categories>
       <tags>
+        <tag>hexo</tag>
         <tag>blog</tag>
         <tag>github</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
