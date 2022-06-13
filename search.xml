@@ -16,6 +16,234 @@
 ]]></content>
   </entry>
   <entry>
+    <title>配置 Sublime 的 Markdown 书写环境</title>
+    <url>/2022/06/13/%E9%85%8D%E7%BD%AESublime%E7%9A%84Markdown%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[
+> 在 Sublime 上优雅地编辑 Markdown
+
+<!-- more -->
+
+## 一、在浏览器中实时查看Markdown
+
+### 1、MarkdownPreview
+
+Package Control 地址：https://packagecontrol.io/packages/MarkdownPreview<br>参考文档地址：https://facelessuser.github.io/MarkdownPreview/
+
+MarkdownPreview 可以在浏览器中预览当前编辑的 Markdown 文件，配合 LiveReload 插件可以在每一次手动保存的时候更新网页，配合 [auto-save](https://packagecontrol.io/packages/auto-save) 插件可以在每一次敲击的时候更新网页。
+
+![](http://cdn.kotkot.club/media/202206121146619.png)
+
+需要配置两处:
+
+①首选项 -> 快捷键设置，将 Markdown 预览绑定到一个比较好用的快捷键（这里是 Alt + M）。
+
+```json
+[
+	{ "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
+]
+```
+
+②首选项 -> Package Settings -> Markdown Preview -> Settings，启用 autoreload 自动刷新。
+
+```yml
+{
+	"enable_autoreload": true,
+}
+```
+
+### 2、LiveReload
+
+Package Control 地址：https://packagecontrol.io/packages/LiveReload<br>使用说明：http://livereload.com/extensions/
+
+![](http://cdn.kotkot.club/media/202206121146570.gif)
+
+需要配置三处：
+
+①首选项 -> Package Settings -> LiveReload -> Settings - User，在json中启用这两个插件。
+
+```yml
+{
+     "enabled_plugins": [
+          "SimpleReloadPlugin",
+          "SimpleRefresh"
+     ]
+}
+```
+
+②Chrome安装插件[LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)，安装完后点击管理扩展程序把“允许访问文件网址”勾上。
+
+<img src="http://cdn.kotkot.club/media/202206121147235.png" style="zoom:28%;" />
+
+③在 Sublime Text 中按 Ctrl + Shift + P 呼出命令列表选择 LiveReload: Enable/disable plug-ins，把 Simple Reload with delay(400ms) 或者 Simple Reload 激活一下。
+
+<img src="http://cdn.kotkot.club/media/202206121147920.png" style="zoom:50%;" />
+
+## 二、Markdown语法支持
+
+### 1、MarkdownEdit
+
+Package Control地址：https://packagecontrol.io/packages/MarkdownEditing
+
+可以在编辑Markdown的时候自动渲染和折行，和IA Writer差不多。基本不用设置什么，安装使用就好。
+
+### 2、Github Markdown Snippets
+
+Package Control地址：https://packagecontrol.io/packages/GitHub%20Markdown%20Snippets
+
+提供了一系列好用的代码片段，比如可以输入 img + TAB 迅速生成一块这样的代码：`![Image Title](Image Source) `，并且可以通过 TAB 键在不同位置跳转。
+
+<img src="http://cdn.kotkot.club/media/202206121147910.gif" style="zoom: 45%;" />
+
+下面是所有代码片段的列表，可以去上面的官方网站查看具体作用。
+
+```text
+  h1              // 一级标题
+  h2              // 二级标题
+  h3              // 三级标题
+  h4              // 四级标题
+  h5              // 五级标题
+  h6              // 六级标题
+  b               // 加粗
+  i               // 斜体
+  bq              // 引用块
+  strike          // 中划线
+  hr              // 分隔线
+  code            // 行内代码块
+  pre             // 代码块
+  a               // 锚点
+  img             // 图片
+  ol              // 有序列表
+  ul              // 无序列表
+  table           // 2x2表格
+```
+
+### 3、MarkdownWriter (Windows Only)
+
+Package Control地址：https://packagecontrol.io/packages/MarkdownWriter<br>Github仓库：https://github.com/vanleo2001/MarkdownWriter
+
+智能粘贴很好用，可以直接粘贴 HTML 为 Markdown 文本，也可以直接粘贴图片到本地引用。但是注意只支持 Windows，因为插件写的比较早，当时 Linux 和 Mac 还没有支持 PIL 库。
+
+<img src="http://cdn.kotkot.club/media/202206121147879.gif" style="zoom: 33%" />
+
+这个插件需要手动安装一下，按照 Github 中说明的步骤：
+
+①将文件夹解压到插件目录（首选项 -> 浏览插件目录）下。
+
+<img src="http://cdn.kotkot.club/media/202206121147037.png" style="zoom: 38%" />
+
+②在 Package Control.sublime-settings（首选项 -> Package Settings -> Package Control -> Settings）中添加一项 MarkdownWriter。
+
+<img src="http://cdn.kotkot.club/media/202206121147162.png" style="zoom: 44%;" />
+
+③如果是64位的Sublime的话需要替换一下PIL库。
+
+<img src="http://cdn.kotkot.club/media/202206121147735.png" style="zoom:38%" />
+
+## 三、实用插件
+
+### 1、AutoFileName
+
+Package Control地址：https://packagecontrol.io/packages/AutoFileName
+
+自动补全文件路径，但是目前对 Markdown 格式无效，所以可以通过 HTML 标签插入，或者通过其他的插件快速插入。
+
+### 2、SmartMarkdown
+
+Package Control地址：https://packagecontrol.io/packages/SmartMarkdown
+
+智能表格很好用，可以创建 [Pandoc](https://pandoc.org/MANUAL.html#tables) 形式的表格，就是被各种横线竖线框起来的那种。<br>也可以用来生成 Markdown 表格，表头正常输入`|header1|header2|header3|`之类的，表头和内容分隔线输入`|:-|:-:|-:|`之类的，下面就可以通过每行第一个字符输入`|`之后不断 <kbd>TAB</kbd> 补全，如下图GIF所示
+
+![](http://cdn.kotkot.club/media/202206121147423.gif)
+
+<a id="3%E3%80%81markdowncomplements"></a>
+### 3、MarkdownComplements
+
+Package Control 地址：https://packagecontrol.io/packages/MarkdownComplements
+
+提供了列表的自动缩进，以及几个与列表有关的小程序（列表头部替换、列表向左向右缩进、列表转换为表格）
+
+<img src="http://cdn.kotkot.club/media/202206121147263.gif" style="zoom: 50%;" />
+
+需要按需求配置一些快捷键：
+
+```yml
+[
+     { 
+     // 向左缩进
+    "keys": ["ctrl+enter"], "command": "markdown_indent_down",
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }]
+     },
+     // 向右缩进
+     { "keys": ["ctrl+shift+enter"], "command": "markdown_indent_up" },
+     // 更换列表头部（bullet）
+     { "keys": ["shift+enter"], "command": "markdown_rotate_list_item" },
+     // 列表转换为表格（设置为了 Ctrl + Shift + O）
+     { "keys": ["ctrl+shift+o"], "command": "outline_to_table"},
+]
+```
+
+### 4、MarkdownTOC
+
+Package Control 地址：https://packagecontrol.io/packages/SmartMarkdown
+
+在写文章的过程中自动生成TOC（Table Of Contents，文章列表），如下图所示：
+
+![image-20220528225001796](http://cdn.kotkot.club/media/202206121147479.png)
+
+**插入方法：**
+
+①在文章的任何一个地方插入这样的代码`[TOC]`，这样预览的文章中就会出现一个拥有所有全文标题的文章列表（包括一级大标题），但是这个列表不会真正添加到Markdown文件中。
+
+```markdown
+# Title
+
+[TOC]
+
+## title1
+
+paragraph1
+
+## title2
+
+paragraph2
+```
+
+②在文章的任何一个地方点击工具 -> MarkdownTOC -> Insert TOC 或者手动添加这样一段代码，这样就可以在文章更新的过程中在被框住的部分实时生成后面部分的 TOC。
+
+```markdown
+<!-- MarkdownTOC -->
+
+<!-- /MarkdownTOC -->
+```
+
+**实用技巧：**
+
+①如果想让TOC自动生成锚点与连接可以在MarkdownTOC的设置中加上下面代码块的几行，也可以直接在`<!-- MarkdownTOC -->`的标签里加，像这样：`<!-- MarkdownTOC autolink="true" autoanchor="true" -->`。
+
+```yml
+{
+  "defaults": {
+    "autoanchor": true,
+    "autolink": true,
+  },
+}
+```
+
+②如果想忽略某个标题的话也很简单，可以在标题上面加上下面的注释，更多的使用方法和设置可以去作者的文档里看。
+
+```markdown
+<!-- MarkdownTOC:excluded -->
+## title to be excluded
+```]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>sublime</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux上的娱乐方式（2021.3，Ubuntu Mate 20.04）</title>
     <url>/2021/04/08/Linux%E4%B8%8A%E7%9A%84%E5%A8%B1%E4%B9%90%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[
@@ -95,6 +323,7 @@ ONS文字游戏引擎实现，jh支持了GBK字符。列举一些游戏，比如
     <url>/2021/04/03/%E5%85%B3%E4%BA%8EGit%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
     <content><![CDATA[> Git的基本命令
 <!-- more -->
+
 ### 1、初始化Git仓库
 
 ```bash
