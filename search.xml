@@ -26,7 +26,7 @@
 
 ## 安装 npm 和 yarn
 
-在这里下载 node.js 的安装包：https://nodejs.org/zh-cn/，使用 npm 安装 yarn。
+在这里下载 node.js 的安装包：https://nodejs.org/zh-cn/ ，使用 npm 安装 yarn。
 
 ```bash
 npm install --global yarn
