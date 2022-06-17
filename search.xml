@@ -16,6 +16,432 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Vuepress 的配置和使用（2022.6.16, Windows）</title>
+    <url>/2022/06/17/Vuepress%20%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[
+> 在 Windows 上使用 Vuepress 创建笔记本的记录
+> 由于安装了 cygwin 所以大部分命令可以像 Linux 中一样运行
+
+<!-- more -->
+
+## 安装 npm 和 yarn
+
+在这里下载 node.js 的安装包：https://nodejs.org/zh-cn/，使用 npm 安装 yarn。
+
+```bash
+npm install --global yarn
+```
+
+## 初始化 Vuepress 目录
+
+```bash
+# 创建和初始化一个 vuepress 目录，文件夹名称为 notes
+mkdir notes && cd notes
+yarn init
+yarn add -D vuepress
+
+# 创建默认的文档 README.md
+mkdir docs && echo '# Welcome to my note' > docs/README.md
+```
+
+## 添加文档编译脚本
+
+添加下面的内容到 `package.json` 中：
+
+```bash
+# notes/package.json
+{
+  "scripts": {
+  	# yarn docs:dev，启动开发服务器
+    "docs:dev": "vuepress dev docs",
+    # yarn docs:build，编译网站至 ~/docs/.vuepress/dist/
+    "docs:build": "vuepress build docs",
+  },
+}
+```
+
+使用 `yarn docs:dev` 启动一个热重载（只有单纯编辑 Markdown 文档的时候可以自动刷新成功）的开发服务器，通过浏览器网址  [http://localhost:8080](http://localhost:8080/) 访问。
+使用 `yarn docs:build` 来完成对网站的编译，编译好的网站在 `docs/.vuepress/dist/` 文件夹中，可以将其直接放置到服务器上托管。
+
+## Vuepress目录结构
+
+先大致浏览一遍就好，已经存在并配置好的是 `package.json` 和 `docs/README.md`。
+
+```
+notes
+├── docs/
+│	├── .vuepress/ # 配置文件夹，其中的 config.js 最为重要
+│	│	├── config.js # 配置默认主题的导航栏、侧边栏、logo 等等
+│	│	└── public/ # 共享目录，这里面的文件可以通过 /xxx.png 访问
+│	│
+│	├── README.md # 链接到 / 默认显示的页面
+│	├── about/ # 关于文件夹
+│	│	└── README.md # 链接到 /about/ 默认显示的页面
+│	└── ... # 其他的文件和文件夹
+│
+└── package.json # 全局的配置与信息
+```
+
+## 设置网站的基础路径
+
+由于希望将网站设置在服务器的 notes 目录中，所以需要更改网站的基础路径，以在部署之后通过 http://kotkot.club/notes/ 这样的网址访问笔记。
+
+```javascript
+// notes/docs/.vuepress/config.js
+module.exports = {
+  // 网站基础目录
+  base: '/notes/'
+}
+```
+
+推荐的链接引用方式是这样的，使用相对路径：
+
+1、Markdown 文档中需要引用的资源放在外部服务器或者文档同位置的 `./assets/` 文件夹下，通过 `./assets/img/hello.jpg` 这样的方式引用，比如文章中使用的图片、音频、视频等。
+
+```markdown
+<!-- notes/docs/README.md -->
+![](./assets/img/test.jpeg)
+```
+
+2、网站全局需要引用的资源放在共享目录 `/docs/.vuepress/public/` 下，在 `config.js` 中通过 `/logo.png` 这样的方式引用，比如网站的图标。
+
+```javascript
+// notes/docs/.vuepress/config.js
+module.exports = {
+  // 网站基础目录
+  base: '/notes/',
+  // 添加网站图标
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+  ],
+}
+```
+
+其他的方式比较麻烦，比如设置了基础路径后在文档中引用公共文件夹中的资源，详细看这里：[vuepress-assets](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%85%AC%E5%85%B1%E6%96%87%E4%BB%B6) 。
+
+## 设置网站的基本信息
+
+继续修改 `notes/docs/.vuepress/config.js` 以设置网站的标题、副标题以及图标。
+
+```javascript
+// notes/docs/.vuepress/config.js
+module.exports = {
+  // 网站基础目录
+  base: '/notes/',
+  // 标题以及描述
+  title: '閃蝶粉の笔记',
+  description: '音乐与网页开发小记',
+  // HTML head 标签中的内容，常用于给网站添加图标和链接样式表
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+  ],
+}
+```
+
+## 给网站添加文档
+
+和创建分类的文件夹是一样的，所有的 Markdown 文档都会被渲染成相应的 HTML（README.md 会被渲染成 index.html），希望最后的网站结构是什么样的如何创建就好了，后面的例子会使用下面的文件结构：
+
+```
+notes
+├── .vuepress/
+│	├── public/
+│	│	└── logo.png
+│	└── config.js
+│
+├── docs/
+│	├── assets/img/test.jpeg
+│	│
+│	├── README.md
+│	├── about.md
+│	├── music/
+│	│	├── mixing/README.md
+│	│	├── transcrpiting/README.md
+│	│	└── UTAU/README.md
+│	└── web/
+│		├── css/README.md
+│		├── html/README.md
+│		└── js/README.md
+│
+└── package.json
+```
+
+稍微解释一下就是 README 作为首页，about 作为关于，music 和 web 分别是笔记的两个大类，其中的每一个文件夹代表一本笔记，每一本笔记都应该有自己单独的侧边栏。
+
+## 设置网站的导航栏
+
+默认主题的导航栏可以在 `notes/docs/.vuepress/config.js` 的 `themeConfig` 中设置，主要是下面这几项：
+
+1、导航栏图标。
+
+```js
+// notes/docs/.vuepress/config.js
+module.exports = {
+  themeConfig: {
+    logo: '/logo.png',
+  },
+}
+```
+
+2、单项导航栏或者指向外部的链接。
+
+```js
+// notes/docs/.vuepress/config.js
+module.exports = {
+  themeConfig: {
+    nav: [
+      { text: '首页', link: '/' },
+    ],
+  },
+}
+```
+
+3、多项导航栏，点击导航栏选项可以展开。
+
+```js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: '语言',
+        items: [
+          { text: '简体中文', link: '/language/zh-CN/' },
+          { text: 'English', link: '/language/en-US/' },
+        ],
+      },
+    ],
+  },
+}
+```
+
+4、多项导航栏中添加分类，即在 items 中继续嵌套 items，可以像分类文章一样分类导航栏选项，右侧的 items 行内缩写是这样的 `items: [{}, {}, {}]`。
+
+```js
+module.exports = {
+  themeConfig: {
+    nav: [
+      {
+        text: '选择笔记',
+        items: [
+          { text: '歌声合成', items: [{ text:'扒谱', link: '/music/transcripting/'}, { text:'UTAU', link: '/music/UTAU/'}, { text:'混音', link: '/music/mixing/'}] },
+          { text: '网页开发', items: [{ text:'HTML', link: '/web/html/'}, { text:'CSS', link: '/web/css/'}, { text:'JavaScript', link: '/web/js/'}] },
+        ],
+      },
+    ],
+  },
+}
+```
+
+导航栏配置完后的结果：
+
+```javascript
+// notes/docs/.vuepress/config.js
+module.exports = {
+  // 网站基础目录
+  base: '/notes/',
+  // 标题以及描述
+  title: '閃蝶粉の笔记',
+  description: '音乐与网页开发小记',
+  // HTML head 标签中的内容，常用于给网站添加图标和链接样式表
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+  ],
+
+  themeConfig: {
+    // 导航栏图标
+    logo: '/logo.png',
+    // 导航栏项目
+    nav: [
+      // 单项
+      { text: '首页', link: '/' },
+      { text: '作者', link: '/about' },
+      { text: '更多相关', link: 'https://kotkot.club/' },
+      // 复项
+      {
+        text: '选择笔记',
+        items: [
+          { text: '歌声合成', items: [{ text:'扒谱', link: '/music/transcripting/'}, { text:'UTAU', link: '/music/UTAU/'}, { text:'混音', link: '/music/mixing/'}] },
+          { text: '网页开发', items: [{ text:'HTML', link: '/web/html/'}, { text:'CSS', link: '/web/css/'}, { text:'JavaScript', link: '/web/js/'}] },
+        ],
+      },
+    ],
+  },
+}
+```
+
+预览图是这样的：
+
+![image-20220617201130213](http://cdn.kotkot.club/media/202206172011747.png)
+
+## 设置网站的主页
+
+这里：[vuepress - mainpage](https://vuepress.vuejs.org/zh/theme/default-theme-config.html#%E9%A6%96%E9%A1%B5) ，根据需求设置就可以了，写进网站根目录下的 README.md 中，下面的正文部分可以继续添加内容。
+
+```yaml
+# 设置这个页面为主页样式
+home: true
+# 图标
+heroImage: /hero.png
+# 标题
+heroText: Hero 标题
+tagline: Hero 副标题
+# 按钮
+actionText: 快速上手 →
+actionLink: /zh/guide/
+# 下面的描述块
+features:
+- title: 简洁至上
+  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+- title: Vue驱动
+  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+- title: 高性能
+  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+footer: MIT Licensed | Copyright © 2018-present Evan You
+```
+
+## 设置侧边栏
+
+如果只需要一个默认的侧边栏的话像下面这样设置即可，`''` 和 `'/'` 是一样的：
+
+```js
+// notes/docs/.vuepress/config.js
+module.exports = {
+  themeConfig: {
+    sidebar: [
+      '/', // notes/docs/README.md
+      '/page-a', // notes/docs/page-a.md
+      '/page-c/', // notes/docs/page-c/README.md
+      ['/page-b', 'Explicit link text'] // notes/docs/page-b.md，但是显示的字符串为 Explicit link text
+    ]
+  }
+}
+```
+
+如果想给不同的页面设置不同的侧边栏的话需要像下面这样设置，即将 sidebar 继续细分，其中的每一个字符串都可以扩展成 `['','']` ：
+
+```js
+module.exports = {
+  themeConfig: {
+		sidebar: {
+      // CSS 笔记的侧边栏
+      '/web/css/': [
+        '', // notes/docs/css/README.md
+        'one/', // notes/docs/css/one/README.md
+        'two/', // notes/docs/css/two/README.md
+      ],
+      // JavaScript 笔记的侧边栏
+      '/web/js/': [
+        '', // notes/docs/js/README.md
+        'one/', // notes/docs/js/one/README.md
+        'two/', // notes/docs/js/two/README.md
+      ],
+    },
+  }
+}
+```
+
+如果想给侧边栏添加分类的话可以像下面这样设置，将一个字符串继续拆解：
+
+```js
+module.exports = {
+  themeConfig: {
+		sidebar: {
+      // HTML 笔记的侧边栏
+      '/web/html/': [
+        '', // notes/docs/html/README.md
+        // 侧边栏分类
+        {
+          title: '第一章',
+          children: [
+            'one/', // notes/docs/html/one/README.md
+            'two/', // notes/docs/html/two/README.md
+          ],
+        },
+    },
+  }
+}
+```
+
+下面是侧边栏配置完后的结果，具体效果可以在这里查看：http://kotkot.club/notes 。
+
+```js
+// notes/docs/.vuepress/config.js
+module.exports = {
+  // 网站基础目录
+  base: '/notes/',
+  // 标题以及描述
+  title: '閃蝶粉の笔记',
+  description: '音乐与网页开发小记',
+  // HTML head 标签中的内容，常用于给网站添加图标和链接样式表
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+  ],
+
+  // vuepress 默认主题的设置
+  themeConfig: {
+    // 导航栏图标
+    logo: '/logo.png',
+    // 导航栏项目，按顺序从左到右显示
+    nav: [
+      // 单项
+      { text: '首页', link: '/' },
+      { text: '作者', link: '/about' },
+      { text: '更多相关', link: 'https://kotkot.club/' },
+      // 列表项，可以在 item 里嵌套 item 实现分类
+      // { text: '歌声合成', link: '/music/' },
+      {
+        text: '选择笔记',
+        items: [
+          { text: '歌声合成', items: [{ text:'扒谱', link: '/music/transcripting/'}, { text:'UTAU', link: '/music/UTAU/'}, { text:'混音', link: '/music/mixing/'}] },
+          { text: '网页开发', items: [{ text:'HTML', link: '/web/html/'}, { text:'CSS', link: '/web/css/'}, { text:'JavaScript', link: '/web/js/'}] },
+        ],
+      },
+    ],
+
+    // 侧边栏
+    sidebar: {
+      // HTML 笔记的侧边栏
+      '/web/html/': [
+        '',
+        // 分类第一章
+        {
+          title: '第一章',
+          children: [
+            'one/',
+            'two/',
+          ],
+        },
+      ],
+      // CSS 笔记的侧边栏
+      '/web/css/': [
+        '',
+        'one/',
+        'two/',
+      ],
+      // JavaScript 笔记的侧边栏
+      '/web/js/': [
+        '',
+        'one/',
+        'two/',
+      ],
+    },
+  }
+}
+```
+
+## 发布
+
+个人比较懒，所以直接用 [Seafile](https://www.seafile.com/) 把编译出的 `notes/docs/.vuepress/dist/` 文件夹同步到了服务器的 `/notes/` 文件夹中。
+]]></content>
+      <categories>
+        <category>note</category>
+      </categories>
+      <tags>
+        <tag>vuepress</tag>
+        <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Typora 的快捷键</title>
     <url>/2022/06/13/Typora%20%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[
