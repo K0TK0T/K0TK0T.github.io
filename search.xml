@@ -1,19 +1,307 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>注意事项与网站导览</title>
-    <url>/2022/05/12/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E7%BD%91%E7%AB%99%E5%AF%BC%E8%A7%88/</url>
+    <title>Linux上的娱乐方式（2021.3，Ubuntu Mate 20.04）</title>
+    <url>/2021/04/08/Linux%E4%B8%8A%E7%9A%84%E5%A8%B1%E4%B9%90%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[
-### 注意事项
+>*很多人认为Linux是很无趣的，只能用于研究和工作的开发用系统。如果这句话放在四年前确实是，因为当时大多数软件对Linux的支持都处于一个起步阶段，稳定性差，原生支持少，想在Linux上玩游戏和处理日常事务很困难。不过经过了几年的发展，渐渐形成了体系，比如国内的百度网盘、WPS、QQ音乐、网易云音乐在LInux平台上线，Steam上steamox+linux的游戏增加，RetroPie的出现，Flathub的大幅度完善等等。Linux早就不是当年配置软件源就要敲半天的蹩脚系统，非常容易配置和使用。*
 
-1、本博客中的内容未经允许禁止转载，联系方式在左侧下方，邮箱yuyu111813@163.com。
+<!--more-->
 
-2、网站启用了书签功能，所以如果想保留阅读进度，退出之前先点击一下右上角。
+## 游戏篇
 
-3、启用了全站搜索功能，如果有某篇文章找不到了但是记住了关键词，可以使用左边的搜索找找看。
+### Steam
 
-### 网站导览
+别说，Steam上面还有挺多好游戏的，简单举几个例子：弹丸论破1+2、星露谷物语、泰拉瑞亚、饥荒、命运石之门、寒蝉鸣泣之时、去月球、Undertale、空洞骑士、古墓丽影、蔚蓝、死亡细胞、武士刀零、杀戮尖塔。具体的可以在商店->浏览->SteamOS+Linux分类下浏览，当然如果电脑配置并不高，最好还是玩文字类游戏，动作类会很卡。
+
+[![cYSuO1.png](https://z3.ax1x.com/2021/04/08/cYSuO1.png)](https://imgtu.com/i/cYSuO1)
+
+Steam在不同系统上安装总会多多少少出点问题，最常见的是缺少32位库，去百度上搜一下就有解决办法，新内核会自动弹窗提示安装。
+
+
+
+### Flathub
+
+flatpak是LInux上的软件包管理器，flathub是它最大的软件库，类似apt和apt库之间的关系吧，不过Flathub提供了可视化的网页检索平台，会比apt在安装应用程序上更有优势。Flathub上有一些Linux原生游戏，比如SuperTuxKart（很不错的赛车游戏）、洞窟物语NX（2D探险，Win、Mac、PSP、3DS和NS都有移植，3DS是3D版本）、Teeworlds（疯狂小人乱斗玩过吧，差不多）等等。除了游戏之外Flathub上还提供一些编译好的模拟器，比如PPSSPP（PSP）、Citra（3DS）和DeSmuME（NDS）。
+
+[![cYkwvD.png](https://z3.ax1x.com/2021/04/08/cYkwvD.png)](https://imgtu.com/i/cYkwvD)
+
+
+
+### RetroArch/RetroPie
+
+这个是我在研究树莓派和PSV的时候接触到的，这个RetroArch就是常说的全能模拟器，复古游戏从世嘉到索尼到任天堂几乎无所不能，平台支持广到无法想象，而RetroPie就是使用RetroArch作为一部分开发的复古游戏操作系统，同样支持大多数的游戏平台，具体可以在[这里](https://retropie.org.uk/docs/3do/)查看。RetroPie可以作为应用程序安装。
+
+我个人对GBA、GBC和NDS上的游戏很感兴趣，所以模拟器这部分是我在Linux上的游戏主力了。像火焰纹章、428、塞尔达、符文公房等游戏单里的游戏基本上都是在RetroPie上玩的，要问为什么有实机还要用模拟器，我只能说是掌机画面太小，摇杆按键容易坏，而且要充电不方便吧。
+
+* [RetroArch](https://www.retroarch.com/?page=platforms)
+
+[![cY17Xn.png](https://z3.ax1x.com/2021/04/08/cY17Xn.png)](https://imgtu.com/i/cY17Xn)
+
+是不推荐用这种方法模拟的，因为Linux的RetroArch对中文的支持不好，非常不稳定，配置繁琐，模拟还容易出问题。当初我尝试的时候出现了这些问题：设置中文以后标题和提示乱码，Citra2018模拟时之笛无法设置用户名，mgba模拟缩小帽存档界面不停闪。再加上每一个核心都是有区别的，但是没有区别设置，导致游戏体验特别不好，就直接卸掉了。
+
+* [RetroPie](https://retropie.org.uk/)
+
+[![cYKeUg.png](https://z3.ax1x.com/2021/04/08/cYKeUg.png)](https://imgtu.com/i/cYKeUg)
+
+它有两种安装方式，一种是作为操作系统安装，另一种是作为应用程序安装。
+
+作为操作系统只适用于树莓派，下载镜像烧录在TF卡上，插上去之后就完成了一个简易游戏机。这个方法并不好，因为没有图形界面用于拷贝游戏和管理存档，需要独占一张TF卡，并且需要单独配备外设（屏幕、键盘、鼠标、手柄）。由于国内网络问题，想在RetroPie上安装桌面和添加库挺麻烦，尤其配置网络的时候如果不安装虚拟终端真的会把人看晕的。
+
+作为应用程序安装，文档基本都在[这里](https://retropie.org.uk/download/)，注意只支持Debian系。说一下遇到的坑：1、安装过程要clone国外的git仓库，可能需要外网。2、x86有一两个包实在抓不到，是N64的模拟器，不会影响使用，实在想用就把参数去掉手动clone下来放到`RetroPie-Setup/tmp`对应的位置重新安装（比如lr-desmume-2015）。3、raspi安装比较麻烦，安装失败后需要查看错误日志使用aptitude手动降级一些软件包。
+
+[![cYgDyR.png](https://z3.ax1x.com/2021/04/08/cYgDyR.png)](https://imgtu.com/i/cYgDyR)
+
+
+
+### 其他
+
+#### [Citra](https://flathub.org/apps/details/org.citra_emu.citra)
+
+RetroPie可以解决GBA、GBC、Wii、NDS、PSP等等的模拟需求，但是暂时不支持3DS的模拟。Citra可以直接在Flathub上找到编译版本安装，个人认为体验不错。3DS上的经典游戏还是挺多的，像塞尔达三作、重装机兵4、火焰纹章三作等等。
+
+[![cYR2xH.png](https://z3.ax1x.com/2021/04/08/cYR2xH.png)](https://imgtu.com/i/cYR2xH)
+
+#### [ONScripter-jh](https://www.linuxgame.cn/onscripter-jh-ons%E6%A8%A1%E6%8B%9F%E5%99%A8)
+
+ONS文字游戏引擎实现，jh支持了GBK字符。列举一些游戏，比如秋之回忆系列、Key社系列（CLANNAD，Rewirte，LB）、型月系列（FSN，月姬，歌月十夜，魔法使之夜）、AKB系列（车轮之国、G弦）、寒蝉鸣泣之时、海猫鸣泣之时。原作者的发布页面被其本人删掉了，只能在网上找其他方法下载（比如小标题上这个链接）。
+
+[![cYIS8f.png](https://z3.ax1x.com/2021/04/08/cYIS8f.png)](https://imgtu.com/i/cYIS8f)]]></content>
+      <categories>
+        <category>game</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Typora 的快捷键</title>
+    <url>/2022/06/13/Typora%20%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[
+> Typora 的快捷键文档翻译
+
+<!-- more -->
+
+## 简介
+
+你可以使用快捷键来快速插入或者修改样式，以及做一些其他 Typora 支持的动作。
+
+你可以在菜单栏找到很多快捷键。
+
+<img src="http://cdn.kotkot.club/media/202206112048107.png" alt="image-20220611204808237" style="zoom:50%" />
+
+## 常用的快捷键
+
+### 自动补全
+
+在 macOS 上，你可以按 `Esc` 键来预览行内数学公式、自动插入 emoji 等等。
+
+### 文件
+
+| 功能               | 快捷键 (Windows/Linux) | 快捷键 (macOS)      |
+| :----------------- | :--------------------- | ------------------- |
+| 新建               | Ctrl + N               | Command + N         |
+| 新窗口             | Ctrl + Shift + N       | Command +Shift + N  |
+| 新标签页           | *(Not Supported)*      | Command + T         |
+| 打开               | Ctrl + O               | Command + O         |
+| 快速打开           | Ctrl + P               | Command + Shift + O |
+| 重新打开关闭的文件 | Ctrl + Shift + T       | Command + Shift + T |
+| 保存               | Ctrl + S               | Command + S         |
+| 另存为 / 复制      | Ctrl + Shift + S       | Command + Shift + S |
+| 参考               | Ctrl + ,               | Command + ,         |
+| 关闭               | Ctrl + W               | Command + W         |
+
+### 编辑
+
+| 功能                       | 快捷键 (Windows/Linux)     | 快捷键 (macOS)                      |
+| :------------------------- | :------------------------- | ----------------------------------- |
+| 新段落                     | Enter                      | Enter                               |
+| 新行                       | Shift + Enter              | Shift + Enter                       |
+| 剪切                       | Ctrl + X                   | Command + X                         |
+| 复制                       | Ctrl + C                   | Command + C                         |
+| 粘贴                       | Ctrl + V                   | Command + V                         |
+| 以Markdown格式复制         | Ctrl + Shift + C           | Command + Shift + C                 |
+| 粘贴为纯文本               | Ctrl + Shift + V           | Command + Shift + V                 |
+| 全选                       | Ctrl + A                   | Command + A                         |
+| 选中一行/选中一行表格      | Ctrl + L                   | Command + L                         |
+| 删除行(在表格中)           | Ctrl + Shift + Backspace   | Command + Shift + Backspace         |
+| 选中一格中的内容(在表格中) | Ctrl + E                   | Command + E                         |
+| 选中单词                   | Ctrl + D                   | Command + D                         |
+| 删除单词                   | Ctrl + Shift + D           | Command + Shift + D                 |
+| 跳转至顶部                 | Ctrl + Home                | Command + ↑                         |
+| 跳转至光标在的部分         | Ctrl + J                   | Command + J                         |
+| 跳转至底部                 | Ctrl + End                 | Command + ↓                         |
+| 查找                       | Ctrl + F                   | Command + F                         |
+| 查找下一项                 | F3 / Enter                 | Command + G / Enter                 |
+| 查找上一项                 | Shift + F3 / Shift + Enter | Command + Shift + G / Shift + Enter |
+| 替换                       | Ctrl + H                   | Command + H                         |
+
+### 段落
+
+| 功能         | 快捷键 (Windows/Linux) | 快捷键 (macOS)            |
+| :----------- | :--------------------- | ------------------------- |
+| 一到六级标题 | Ctrl + 1/2/3/4/5/6     | Command + 1/2/3/4/5/6     |
+| 段落         | Ctrl + 0               | Command + 0               |
+| 增加标题等级 | Ctrl + =               | Command + =               |
+| 减小标题等级 | Ctrl + -               | Command + -               |
+| 表格         | Ctrl + T               | Command + Option + T      |
+| 代码块       | Ctrl + Shift + K       | Command + Option + C      |
+| 数学公式块   | Ctrl + Shift + M       | Command + Option + B      |
+| 引用         | Ctrl + Shift + Q       | Command + Option + Q      |
+| 有序列表     | Ctrl + Shift + [       | Command + Option + O      |
+| 无序列表     | Ctrl + Shift + ]       | Command + Option + U      |
+| 缩进         | Ctrl + [ / Tab         | Command + [ / Tab         |
+| 反向缩进     | Ctrl + ] / Shift + Tab | Command + ] / Shift + Tab |
+
+### 格式
+
+| 功能     | 快捷键 (Windows/Linux) | 快捷键 (macOS)        |
+| :------- | :--------------------- | --------------------- |
+| 加粗     | Ctrl + B               | Command + B           |
+| 斜体     | Ctrl + I               | Command + I           |
+| 下划线   | Ctrl + U               | Command + U           |
+| 行内代码 | Ctrl + Shift +\` |Command + Shift + \`|
+| 中划线   | Alt + Shift + 5        | Control + Shift + \`  |
+| 超链接   | Ctrl + K               | Command + K           |
+| 图片     | Ctrl + Shift + I       | Command + Control + I |
+| 清除样式 | Ctrl + \               | Command + \           |
+
+### 视图
+
+| 功能                           | 快捷键 (Windows/Linux) | 快捷键 (macOS)        |
+| :----------------------------- | :--------------------- | --------------------- |
+| 打开侧边栏                     | Ctrl + Shift + L       | Command + Shift + L   |
+| 大纲                           | Ctrl + Shift + 1       | Command + Control + 1 |
+| 文章                           | Ctrl + Shift + 2       | Command + Control + 2 |
+| 文件树                         | Ctrl + Shift + 3       | Command + Control + 3 |
+| 源代码模式                     | Ctrl + /               | Command + /           |
+| 专注模式(高亮显示正在编辑的块) | F8                     | F8                    |
+| 打字机模式(打字的行处于最中间) | F9                     | F9                    |
+| 全屏                           | F11                    | Command + Option + F  |
+| 实际大小                       | Ctrl + Shift + 0       | *(Not Supported)*     |
+| 放大                           | Ctrl + Shift + =       | *(Not Supported)*     |
+| 缩小                           | Ctrl + Shift + -       | *(Not Supported)*     |
+| 在打开的文件中切换             | Ctrl + Tab             | Command + `           |
+| 打开开发工具                   | Ctrl + Shift + I       | -                     |
+
+## 更改快捷键
+
+用户可以设置或者自定义 Typora 菜单栏中的指令的快捷键，这篇文章将说明如何做到这点。
+
+### macOS
+
+我们使用 macOS 的系统功能来自定义 Typora 的快捷键绑定。
+
+1. 打开 `System Preference` → `Keyboard`, 选择标签页 `Shortcuts`。选择 `App Shortcuts` 在左侧的窗口。
+
+   <img src="http://cdn.kotkot.club/media/202206111944188.png" alt="Snip20160814_1" style="zoom: 50%" />
+
+2. 点击 “+” 按钮，一个对话框会弹出来。在 `Application` 栏中选择 “Typora.app”，然后输入你要添加快捷键的名字、输入想要绑定的快捷键。
+
+   举个例子，如果你想要添加固定 Typora 窗口的快捷键，可以像下面这张图一样设置：
+
+   <img src="http://cdn.kotkot.club/media/202206111944862.png" alt="Snip20160814_5" style="zoom:50%" />
+
+   这之后 `Command+Shift+P` 会变成菜单指令 “窗口永远置顶” 的快捷键。
+
+### Windows / Linux
+
+> 提示：这需要Typora的版本 ≥ v0.9.16。
+
+1. 在 Typora 中打开 `Menu` → `Preference` ，然后点击 “打开高级设置”。
+
+   <img src="http://cdn.kotkot.club/media/202206111944039.png" alt="sshot-1" style="zoom: 67%" />
+
+2. 从文件管理器中打开并编辑 `conf.user.json`。如果不存在这个文件，创建它。
+
+3. 设置或添加一个表示快捷键的 JSON 对象，比如下图：
+
+   <img src="http://cdn.kotkot.club/media/202206111945636.png" alt="Snip20160814_7" style="zoom: 50%" />
+
+4. 重启 Typora，新快捷键就会被应用了。
+
+   <img src="http://cdn.kotkot.club/media/202206111945840.png" alt="sshot-2" style="zoom: 67%" />
+
+你可以设置或者改变经典模式菜单栏中有的项目的快捷键。
+
+### 问：快捷键在 Ubuntu 上不工作
+
+这个问题的解决方案请看下面的文章：
+
+- https://help.ubuntu.com/community/KeyboardShortcuts
+- https://askubuntu.com/questions/208310/ctrl-a-doesnt-work-in-browsers
 ]]></content>
+      <categories>
+        <category>typora</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于Git那点事</title>
+    <url>/2021/04/03/%E5%85%B3%E4%BA%8EGit%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
+    <content><![CDATA[> Git的基本命令
+<!-- more -->
+
+### 1、初始化Git仓库
+
+```bash
+cd gitrepo
+git init
+git add .  # 本地添加修改
+git status
+# 设置本地用户名和邮箱
+git config --global user.name "name"
+git config --global user.email "eamil-address"
+git commit -m "first commit"  # 本地提交修改
+git branch -M main  # 给分支改名为main
+```
+
+### 2、链接到远程库
+
+```bash
+# 生成ssh公钥和私钥，将公钥存放到github公钥中
+sudo apt install ssh
+ssh-keygen -t rsa
+git remote add origin <url>  # 添加远程仓库
+git push -u origin main  # 推送分支
+```
+
+### 3、分支操作
+
+```bash
+git branch  # 查看本地分支
+git branch -a  # 查看本地和远程的所有分支
+
+git branch [branch_name]  # 新建分支
+git branch -m [branch_name]  # 移动/重命名分支（-M强制移动，即使没有完全合并）
+git branch -d [branch_name]  # 删除分支（-M强制删除，即使没有完全合并）
+
+git checkout [branch_name]  # 切换分支（-b同时创建分支）
+git diff [branch_name]  # 比较分支
+git merge [branch_name]  # 合并分支
+git push -u origin [branch_name]  # 提交分支，再次提交就不需要后面的参数了，-u就是--set-upstream，设置提交流
+```
+
+### 4、解决远程冲突
+
+```bash
+git fetch origin [branch_name]:[dev]  # 将远程分支拉到本地的另一条分支上
+git diff [dev]  # 比对本地和远程分支
+git merge [dev]  # 合并分支
+git push  # 重新提交
+git branch -d [dev]  # 删除远程分支
+```
+
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Vuepress 的配置和使用（2022.6.16, Windows）</title>
@@ -65,7 +353,7 @@ mkdir docs && echo '# Welcome to my note' > docs/README.md
 
 ## Vuepress目录结构
 
-先大致浏览一遍就好，已经存在并配置好的是 `package.json` 和 `docs/README.md`。
+大致浏览一遍，已经存在并配置好的是 `package.json` 和 `docs/README.md`。
 
 ```
 notes
@@ -84,7 +372,7 @@ notes
 
 ## 设置网站的基础路径
 
-由于希望将网站设置在服务器的 notes 目录中，所以需要更改网站的基础路径，以在部署之后通过 http://kotkot.club/notes/ 这样的网址访问笔记。
+由于希望将网站设置在服务器的 notes 目录中，所以需要更改网站的基础路径，以在部署之后通过 `http://kotkot.club/notes/` 这样的网址访问笔记。
 
 ```javascript
 // notes/docs/.vuepress/config.js
@@ -117,7 +405,7 @@ module.exports = {
 }
 ```
 
-其他的方式比较麻烦，比如设置了基础路径后在文档中引用公共文件夹中的资源，详细看这里：[vuepress-assets](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%85%AC%E5%85%B1%E6%96%87%E4%BB%B6) 。
+其他的方式比较麻烦，比如设置了基础路径后在文档中引用公共文件夹中的资源需要用 `<img :src="$withBase('/logo.png')" alt="foo">` 这样的标签框起来，详细看这里：[vuepress-assets](https://vuepress.vuejs.org/zh/guide/assets.html#%E5%85%AC%E5%85%B1%E6%96%87%E4%BB%B6) 。
 
 ## 设置网站的基本信息
 
@@ -340,7 +628,7 @@ module.exports = {
 }
 ```
 
-如果想给侧边栏添加分类的话可以像下面这样设置，将一个字符串继续拆解：
+如果想给侧边栏添加分类的话可以像下面这样设置：
 
 ```js
 module.exports = {
@@ -362,7 +650,7 @@ module.exports = {
 }
 ```
 
-下面是侧边栏配置完后的结果，具体效果可以在这里查看：http://kotkot.club/notes 。
+配置完侧边栏以后的结果，具体效果可以在这里查看：http://kotkot.club/notes 。
 
 ```js
 // notes/docs/.vuepress/config.js
@@ -431,7 +719,7 @@ module.exports = {
 
 ## 发布
 
-个人比较懒，所以直接用 [Seafile](https://www.seafile.com/) 把编译出的 `notes/docs/.vuepress/dist/` 文件夹同步到了服务器的 `/notes/` 文件夹中。
+官方的介绍文档在这里 [vuepress - publish](https://vuepress.vuejs.org/zh/guide/deploy.html#%E4%BA%91%E5%BC%80%E5%8F%91-cloudbase) ，不过我是用 [Seafile](https://www.seafile.com/) 将编译出的 `notes/docs/.vuepress/dist/` 文件夹同步到了服务器的 `/notes/` 文件夹中，这样每次运行 `yarn docs:build` 的时候会自动发布。
 ]]></content>
       <categories>
         <category>note</category>
@@ -439,537 +727,6 @@ module.exports = {
       <tags>
         <tag>vuepress</tag>
         <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora 的快捷键</title>
-    <url>/2022/06/13/Typora%20%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[
-> Typora 的快捷键文档翻译
-
-<!-- more -->
-
-## 简介
-
-你可以使用快捷键来快速插入或者修改样式，以及做一些其他 Typora 支持的动作。
-
-你可以在菜单栏找到很多快捷键。
-
-<img src="http://cdn.kotkot.club/media/202206112048107.png" alt="image-20220611204808237" style="zoom:50%" />
-
-## 常用的快捷键
-
-### 自动补全
-
-在 macOS 上，你可以按 `Esc` 键来预览行内数学公式、自动插入 emoji 等等。
-
-### 文件
-
-| 功能               | 快捷键 (Windows/Linux) | 快捷键 (macOS)      |
-| :----------------- | :--------------------- | ------------------- |
-| 新建               | Ctrl + N               | Command + N         |
-| 新窗口             | Ctrl + Shift + N       | Command +Shift + N  |
-| 新标签页           | *(Not Supported)*      | Command + T         |
-| 打开               | Ctrl + O               | Command + O         |
-| 快速打开           | Ctrl + P               | Command + Shift + O |
-| 重新打开关闭的文件 | Ctrl + Shift + T       | Command + Shift + T |
-| 保存               | Ctrl + S               | Command + S         |
-| 另存为 / 复制      | Ctrl + Shift + S       | Command + Shift + S |
-| 参考               | Ctrl + ,               | Command + ,         |
-| 关闭               | Ctrl + W               | Command + W         |
-
-### 编辑
-
-| 功能                       | 快捷键 (Windows/Linux)     | 快捷键 (macOS)                      |
-| :------------------------- | :------------------------- | ----------------------------------- |
-| 新段落                     | Enter                      | Enter                               |
-| 新行                       | Shift + Enter              | Shift + Enter                       |
-| 剪切                       | Ctrl + X                   | Command + X                         |
-| 复制                       | Ctrl + C                   | Command + C                         |
-| 粘贴                       | Ctrl + V                   | Command + V                         |
-| 以Markdown格式复制         | Ctrl + Shift + C           | Command + Shift + C                 |
-| 粘贴为纯文本               | Ctrl + Shift + V           | Command + Shift + V                 |
-| 全选                       | Ctrl + A                   | Command + A                         |
-| 选中一行/选中一行表格      | Ctrl + L                   | Command + L                         |
-| 删除行(在表格中)           | Ctrl + Shift + Backspace   | Command + Shift + Backspace         |
-| 选中一格中的内容(在表格中) | Ctrl + E                   | Command + E                         |
-| 选中单词                   | Ctrl + D                   | Command + D                         |
-| 删除单词                   | Ctrl + Shift + D           | Command + Shift + D                 |
-| 跳转至顶部                 | Ctrl + Home                | Command + ↑                         |
-| 跳转至光标在的部分         | Ctrl + J                   | Command + J                         |
-| 跳转至底部                 | Ctrl + End                 | Command + ↓                         |
-| 查找                       | Ctrl + F                   | Command + F                         |
-| 查找下一项                 | F3 / Enter                 | Command + G / Enter                 |
-| 查找上一项                 | Shift + F3 / Shift + Enter | Command + Shift + G / Shift + Enter |
-| 替换                       | Ctrl + H                   | Command + H                         |
-
-### 段落
-
-| 功能         | 快捷键 (Windows/Linux) | 快捷键 (macOS)            |
-| :----------- | :--------------------- | ------------------------- |
-| 一到六级标题 | Ctrl + 1/2/3/4/5/6     | Command + 1/2/3/4/5/6     |
-| 段落         | Ctrl + 0               | Command + 0               |
-| 增加标题等级 | Ctrl + =               | Command + =               |
-| 减小标题等级 | Ctrl + -               | Command + -               |
-| 表格         | Ctrl + T               | Command + Option + T      |
-| 代码块       | Ctrl + Shift + K       | Command + Option + C      |
-| 数学公式块   | Ctrl + Shift + M       | Command + Option + B      |
-| 引用         | Ctrl + Shift + Q       | Command + Option + Q      |
-| 有序列表     | Ctrl + Shift + [       | Command + Option + O      |
-| 无序列表     | Ctrl + Shift + ]       | Command + Option + U      |
-| 缩进         | Ctrl + [ / Tab         | Command + [ / Tab         |
-| 反向缩进     | Ctrl + ] / Shift + Tab | Command + ] / Shift + Tab |
-
-### 格式
-
-| 功能     | 快捷键 (Windows/Linux) | 快捷键 (macOS)        |
-| :------- | :--------------------- | --------------------- |
-| 加粗     | Ctrl + B               | Command + B           |
-| 斜体     | Ctrl + I               | Command + I           |
-| 下划线   | Ctrl + U               | Command + U           |
-| 行内代码 | Ctrl + Shift +\` |Command + Shift + \`|
-| 中划线   | Alt + Shift + 5        | Control + Shift + \`  |
-| 超链接   | Ctrl + K               | Command + K           |
-| 图片     | Ctrl + Shift + I       | Command + Control + I |
-| 清除样式 | Ctrl + \               | Command + \           |
-
-### 视图
-
-| 功能                           | 快捷键 (Windows/Linux) | 快捷键 (macOS)        |
-| :----------------------------- | :--------------------- | --------------------- |
-| 打开侧边栏                     | Ctrl + Shift + L       | Command + Shift + L   |
-| 大纲                           | Ctrl + Shift + 1       | Command + Control + 1 |
-| 文章                           | Ctrl + Shift + 2       | Command + Control + 2 |
-| 文件树                         | Ctrl + Shift + 3       | Command + Control + 3 |
-| 源代码模式                     | Ctrl + /               | Command + /           |
-| 专注模式(高亮显示正在编辑的块) | F8                     | F8                    |
-| 打字机模式(打字的行处于最中间) | F9                     | F9                    |
-| 全屏                           | F11                    | Command + Option + F  |
-| 实际大小                       | Ctrl + Shift + 0       | *(Not Supported)*     |
-| 放大                           | Ctrl + Shift + =       | *(Not Supported)*     |
-| 缩小                           | Ctrl + Shift + -       | *(Not Supported)*     |
-| 在打开的文件中切换             | Ctrl + Tab             | Command + `           |
-| 打开开发工具                   | Ctrl + Shift + I       | -                     |
-
-## 更改快捷键
-
-用户可以设置或者自定义 Typora 菜单栏中的指令的快捷键，这篇文章将说明如何做到这点。
-
-### macOS
-
-我们使用 macOS 的系统功能来自定义 Typora 的快捷键绑定。
-
-1. 打开 `System Preference` → `Keyboard`, 选择标签页 `Shortcuts`。选择 `App Shortcuts` 在左侧的窗口。
-
-   <img src="http://cdn.kotkot.club/media/202206111944188.png" alt="Snip20160814_1" style="zoom: 50%" />
-
-2. 点击 “+” 按钮，一个对话框会弹出来。在 `Application` 栏中选择 “Typora.app”，然后输入你要添加快捷键的名字、输入想要绑定的快捷键。
-
-   举个例子，如果你想要添加固定 Typora 窗口的快捷键，可以像下面这张图一样设置：
-
-   <img src="http://cdn.kotkot.club/media/202206111944862.png" alt="Snip20160814_5" style="zoom:50%" />
-
-   这之后 `Command+Shift+P` 会变成菜单指令 “窗口永远置顶” 的快捷键。
-
-### Windows / Linux
-
-> 提示：这需要Typora的版本 ≥ v0.9.16。
-
-1. 在 Typora 中打开 `Menu` → `Preference` ，然后点击 “打开高级设置”。
-
-   <img src="http://cdn.kotkot.club/media/202206111944039.png" alt="sshot-1" style="zoom: 67%" />
-
-2. 从文件管理器中打开并编辑 `conf.user.json`。如果不存在这个文件，创建它。
-
-3. 设置或添加一个表示快捷键的 JSON 对象，比如下图：
-
-   <img src="http://cdn.kotkot.club/media/202206111945636.png" alt="Snip20160814_7" style="zoom: 50%" />
-
-4. 重启 Typora，新快捷键就会被应用了。
-
-   <img src="http://cdn.kotkot.club/media/202206111945840.png" alt="sshot-2" style="zoom: 67%" />
-
-你可以设置或者改变经典模式菜单栏中有的项目的快捷键。
-
-### 问：快捷键在 Ubuntu 上不工作
-
-这个问题的解决方案请看下面的文章：
-
-- https://help.ubuntu.com/community/KeyboardShortcuts
-- https://askubuntu.com/questions/208310/ctrl-a-doesnt-work-in-browsers
-]]></content>
-      <categories>
-        <category>typora</category>
-      </categories>
-      <tags>
-        <tag>typora</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>配置 Sublime 的 Markdown 书写环境</title>
-    <url>/2022/06/13/%E9%85%8D%E7%BD%AESublime%E7%9A%84Markdown%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[
-> 在 Sublime 上优雅地编辑 Markdown
-
-<!-- more -->
-
-## 一、在浏览器中实时查看Markdown
-
-### 1、MarkdownPreview
-
-Package Control 地址：https://packagecontrol.io/packages/MarkdownPreview<br>参考文档地址：https://facelessuser.github.io/MarkdownPreview/
-
-MarkdownPreview 可以在浏览器中预览当前编辑的 Markdown 文件，配合 LiveReload 插件可以在每一次手动保存的时候更新网页，配合 [auto-save](https://packagecontrol.io/packages/auto-save) 插件可以在每一次敲击的时候更新网页。
-
-![](http://cdn.kotkot.club/media/202206121146619.png)
-
-需要配置两处:
-
-①首选项 -> 快捷键设置，将 Markdown 预览绑定到一个比较好用的快捷键（这里是 Alt + M）。
-
-```json
-[
-	{ "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
-]
-```
-
-②首选项 -> Package Settings -> Markdown Preview -> Settings，启用 autoreload 自动刷新。
-
-```yml
-{
-	"enable_autoreload": true,
-}
-```
-
-### 2、LiveReload
-
-Package Control 地址：https://packagecontrol.io/packages/LiveReload<br>使用说明：http://livereload.com/extensions/
-
-![](http://cdn.kotkot.club/media/202206121146570.gif)
-
-需要配置三处：
-
-①首选项 -> Package Settings -> LiveReload -> Settings - User，在json中启用这两个插件。
-
-```yml
-{
-     "enabled_plugins": [
-          "SimpleReloadPlugin",
-          "SimpleRefresh"
-     ]
-}
-```
-
-②Chrome安装插件[LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)，安装完后点击管理扩展程序把“允许访问文件网址”勾上。
-
-<img src="http://cdn.kotkot.club/media/202206121147235.png" style="zoom:28%;" />
-
-③在 Sublime Text 中按 Ctrl + Shift + P 呼出命令列表选择 LiveReload: Enable/disable plug-ins，把 Simple Reload with delay(400ms) 或者 Simple Reload 激活一下。
-
-<img src="http://cdn.kotkot.club/media/202206121147920.png" style="zoom:50%;" />
-
-## 二、Markdown语法支持
-
-### 1、MarkdownEdit
-
-Package Control地址：https://packagecontrol.io/packages/MarkdownEditing
-
-可以在编辑Markdown的时候自动渲染和折行，和IA Writer差不多。基本不用设置什么，安装使用就好。
-
-### 2、Github Markdown Snippets
-
-Package Control地址：https://packagecontrol.io/packages/GitHub%20Markdown%20Snippets
-
-提供了一系列好用的代码片段，比如可以输入 img + TAB 迅速生成一块这样的代码：`![Image Title](Image Source) `，并且可以通过 TAB 键在不同位置跳转。
-
-<img src="http://cdn.kotkot.club/media/202206121147910.gif" style="zoom: 45%;" />
-
-下面是所有代码片段的列表，可以去上面的官方网站查看具体作用。
-
-```text
-  h1              // 一级标题
-  h2              // 二级标题
-  h3              // 三级标题
-  h4              // 四级标题
-  h5              // 五级标题
-  h6              // 六级标题
-  b               // 加粗
-  i               // 斜体
-  bq              // 引用块
-  strike          // 中划线
-  hr              // 分隔线
-  code            // 行内代码块
-  pre             // 代码块
-  a               // 锚点
-  img             // 图片
-  ol              // 有序列表
-  ul              // 无序列表
-  table           // 2x2表格
-```
-
-### 3、MarkdownWriter (Windows Only)
-
-Package Control地址：https://packagecontrol.io/packages/MarkdownWriter<br>Github仓库：https://github.com/vanleo2001/MarkdownWriter
-
-智能粘贴很好用，可以直接粘贴 HTML 为 Markdown 文本，也可以直接粘贴图片到本地引用。但是注意只支持 Windows，因为插件写的比较早，当时 Linux 和 Mac 还没有支持 PIL 库。
-
-<img src="http://cdn.kotkot.club/media/202206121147879.gif" style="zoom: 33%" />
-
-这个插件需要手动安装一下，按照 Github 中说明的步骤：
-
-①将文件夹解压到插件目录（首选项 -> 浏览插件目录）下。
-
-<img src="http://cdn.kotkot.club/media/202206121147037.png" style="zoom: 38%" />
-
-②在 Package Control.sublime-settings（首选项 -> Package Settings -> Package Control -> Settings）中添加一项 MarkdownWriter。
-
-<img src="http://cdn.kotkot.club/media/202206121147162.png" style="zoom: 44%;" />
-
-③如果是64位的Sublime的话需要替换一下PIL库。
-
-<img src="http://cdn.kotkot.club/media/202206121147735.png" style="zoom:38%" />
-
-## 三、实用插件
-
-### 1、AutoFileName
-
-Package Control地址：https://packagecontrol.io/packages/AutoFileName
-
-自动补全文件路径，但是目前对 Markdown 格式无效，所以可以通过 HTML 标签插入，或者通过其他的插件快速插入。
-
-### 2、SmartMarkdown
-
-Package Control地址：https://packagecontrol.io/packages/SmartMarkdown
-
-智能表格很好用，可以创建 [Pandoc](https://pandoc.org/MANUAL.html#tables) 形式的表格，就是被各种横线竖线框起来的那种。<br>也可以用来生成 Markdown 表格，表头正常输入`|header1|header2|header3|`之类的，表头和内容分隔线输入`|:-|:-:|-:|`之类的，下面就可以通过每行第一个字符输入`|`之后不断 <kbd>TAB</kbd> 补全，如下图GIF所示
-
-![](http://cdn.kotkot.club/media/202206121147423.gif)
-
-<a id="3%E3%80%81markdowncomplements"></a>
-### 3、MarkdownComplements
-
-Package Control 地址：https://packagecontrol.io/packages/MarkdownComplements
-
-提供了列表的自动缩进，以及几个与列表有关的小程序（列表头部替换、列表向左向右缩进、列表转换为表格）
-
-<img src="http://cdn.kotkot.club/media/202206121147263.gif" style="zoom: 50%;" />
-
-需要按需求配置一些快捷键：
-
-```yml
-[
-     { 
-     // 向左缩进
-    "keys": ["ctrl+enter"], "command": "markdown_indent_down",
-    "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }]
-     },
-     // 向右缩进
-     { "keys": ["ctrl+shift+enter"], "command": "markdown_indent_up" },
-     // 更换列表头部（bullet）
-     { "keys": ["shift+enter"], "command": "markdown_rotate_list_item" },
-     // 列表转换为表格（设置为了 Ctrl + Shift + O）
-     { "keys": ["ctrl+shift+o"], "command": "outline_to_table"},
-]
-```
-
-### 4、MarkdownTOC
-
-Package Control 地址：https://packagecontrol.io/packages/SmartMarkdown
-
-在写文章的过程中自动生成TOC（Table Of Contents，文章列表），如下图所示：
-
-![image-20220528225001796](http://cdn.kotkot.club/media/202206121147479.png)
-
-**插入方法：**
-
-①在文章的任何一个地方插入这样的代码`[TOC]`，这样预览的文章中就会出现一个拥有所有全文标题的文章列表（包括一级大标题），但是这个列表不会真正添加到Markdown文件中。
-
-```markdown
-# Title
-
-[TOC]
-
-## title1
-
-paragraph1
-
-## title2
-
-paragraph2
-```
-
-②在文章的任何一个地方点击工具 -> MarkdownTOC -> Insert TOC 或者手动添加这样一段代码，这样就可以在文章更新的过程中在被框住的部分实时生成后面部分的 TOC。
-
-```markdown
-<!-- MarkdownTOC -->
-
-<!-- /MarkdownTOC -->
-```
-
-**实用技巧：**
-
-①如果想让TOC自动生成锚点与连接可以在MarkdownTOC的设置中加上下面代码块的几行，也可以直接在`<!-- MarkdownTOC -->`的标签里加，像这样：`<!-- MarkdownTOC autolink="true" autoanchor="true" -->`。
-
-```yml
-{
-  "defaults": {
-    "autoanchor": true,
-    "autolink": true,
-  },
-}
-```
-
-②如果想忽略某个标题的话也很简单，可以在标题上面加上下面的注释，更多的使用方法和设置可以去作者的文档里看。
-
-```markdown
-<!-- MarkdownTOC:excluded -->
-## title to be excluded
-```]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>sublime</tag>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux上的娱乐方式（2021.3，Ubuntu Mate 20.04）</title>
-    <url>/2021/04/08/Linux%E4%B8%8A%E7%9A%84%E5%A8%B1%E4%B9%90%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[
->*很多人认为Linux是很无趣的，只能用于研究和工作的开发用系统。如果这句话放在四年前确实是，因为当时大多数软件对Linux的支持都处于一个起步阶段，稳定性差，原生支持少，想在Linux上玩游戏和处理日常事务很困难。不过经过了几年的发展，渐渐形成了体系，比如国内的百度网盘、WPS、QQ音乐、网易云音乐在LInux平台上线，Steam上steamox+linux的游戏增加，RetroPie的出现，Flathub的大幅度完善等等。Linux早就不是当年配置软件源就要敲半天的蹩脚系统，非常容易配置和使用。*
-
-<!--more-->
-
-## 游戏篇
-
-### Steam
-
-别说，Steam上面还有挺多好游戏的，简单举几个例子：弹丸论破1+2、星露谷物语、泰拉瑞亚、饥荒、命运石之门、寒蝉鸣泣之时、去月球、Undertale、空洞骑士、古墓丽影、蔚蓝、死亡细胞、武士刀零、杀戮尖塔。具体的可以在商店->浏览->SteamOS+Linux分类下浏览，当然如果电脑配置并不高，最好还是玩文字类游戏，动作类会很卡。
-
-[![cYSuO1.png](https://z3.ax1x.com/2021/04/08/cYSuO1.png)](https://imgtu.com/i/cYSuO1)
-
-Steam在不同系统上安装总会多多少少出点问题，最常见的是缺少32位库，去百度上搜一下就有解决办法，新内核会自动弹窗提示安装。
-
-
-
-### Flathub
-
-flatpak是LInux上的软件包管理器，flathub是它最大的软件库，类似apt和apt库之间的关系吧，不过Flathub提供了可视化的网页检索平台，会比apt在安装应用程序上更有优势。Flathub上有一些Linux原生游戏，比如SuperTuxKart（很不错的赛车游戏）、洞窟物语NX（2D探险，Win、Mac、PSP、3DS和NS都有移植，3DS是3D版本）、Teeworlds（疯狂小人乱斗玩过吧，差不多）等等。除了游戏之外Flathub上还提供一些编译好的模拟器，比如PPSSPP（PSP）、Citra（3DS）和DeSmuME（NDS）。
-
-[![cYkwvD.png](https://z3.ax1x.com/2021/04/08/cYkwvD.png)](https://imgtu.com/i/cYkwvD)
-
-
-
-### RetroArch/RetroPie
-
-这个是我在研究树莓派和PSV的时候接触到的，这个RetroArch就是常说的全能模拟器，复古游戏从世嘉到索尼到任天堂几乎无所不能，平台支持广到无法想象，而RetroPie就是使用RetroArch作为一部分开发的复古游戏操作系统，同样支持大多数的游戏平台，具体可以在[这里](https://retropie.org.uk/docs/3do/)查看。RetroPie可以作为应用程序安装。
-
-我个人对GBA、GBC和NDS上的游戏很感兴趣，所以模拟器这部分是我在Linux上的游戏主力了。像火焰纹章、428、塞尔达、符文公房等游戏单里的游戏基本上都是在RetroPie上玩的，要问为什么有实机还要用模拟器，我只能说是掌机画面太小，摇杆按键容易坏，而且要充电不方便吧。
-
-* [RetroArch](https://www.retroarch.com/?page=platforms)
-
-[![cY17Xn.png](https://z3.ax1x.com/2021/04/08/cY17Xn.png)](https://imgtu.com/i/cY17Xn)
-
-是不推荐用这种方法模拟的，因为Linux的RetroArch对中文的支持不好，非常不稳定，配置繁琐，模拟还容易出问题。当初我尝试的时候出现了这些问题：设置中文以后标题和提示乱码，Citra2018模拟时之笛无法设置用户名，mgba模拟缩小帽存档界面不停闪。再加上每一个核心都是有区别的，但是没有区别设置，导致游戏体验特别不好，就直接卸掉了。
-
-* [RetroPie](https://retropie.org.uk/)
-
-[![cYKeUg.png](https://z3.ax1x.com/2021/04/08/cYKeUg.png)](https://imgtu.com/i/cYKeUg)
-
-它有两种安装方式，一种是作为操作系统安装，另一种是作为应用程序安装。
-
-作为操作系统只适用于树莓派，下载镜像烧录在TF卡上，插上去之后就完成了一个简易游戏机。这个方法并不好，因为没有图形界面用于拷贝游戏和管理存档，需要独占一张TF卡，并且需要单独配备外设（屏幕、键盘、鼠标、手柄）。由于国内网络问题，想在RetroPie上安装桌面和添加库挺麻烦，尤其配置网络的时候如果不安装虚拟终端真的会把人看晕的。
-
-作为应用程序安装，文档基本都在[这里](https://retropie.org.uk/download/)，注意只支持Debian系。说一下遇到的坑：1、安装过程要clone国外的git仓库，可能需要外网。2、x86有一两个包实在抓不到，是N64的模拟器，不会影响使用，实在想用就把参数去掉手动clone下来放到`RetroPie-Setup/tmp`对应的位置重新安装（比如lr-desmume-2015）。3、raspi安装比较麻烦，安装失败后需要查看错误日志使用aptitude手动降级一些软件包。
-
-[![cYgDyR.png](https://z3.ax1x.com/2021/04/08/cYgDyR.png)](https://imgtu.com/i/cYgDyR)
-
-
-
-### 其他
-
-#### [Citra](https://flathub.org/apps/details/org.citra_emu.citra)
-
-RetroPie可以解决GBA、GBC、Wii、NDS、PSP等等的模拟需求，但是暂时不支持3DS的模拟。Citra可以直接在Flathub上找到编译版本安装，个人认为体验不错。3DS上的经典游戏还是挺多的，像塞尔达三作、重装机兵4、火焰纹章三作等等。
-
-[![cYR2xH.png](https://z3.ax1x.com/2021/04/08/cYR2xH.png)](https://imgtu.com/i/cYR2xH)
-
-#### [ONScripter-jh](https://www.linuxgame.cn/onscripter-jh-ons%E6%A8%A1%E6%8B%9F%E5%99%A8)
-
-ONS文字游戏引擎实现，jh支持了GBK字符。列举一些游戏，比如秋之回忆系列、Key社系列（CLANNAD，Rewirte，LB）、型月系列（FSN，月姬，歌月十夜，魔法使之夜）、AKB系列（车轮之国、G弦）、寒蝉鸣泣之时、海猫鸣泣之时。原作者的发布页面被其本人删掉了，只能在网上找其他方法下载（比如小标题上这个链接）。
-
-[![cYIS8f.png](https://z3.ax1x.com/2021/04/08/cYIS8f.png)](https://imgtu.com/i/cYIS8f)]]></content>
-      <categories>
-        <category>game</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>game</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于Git那点事</title>
-    <url>/2021/04/03/%E5%85%B3%E4%BA%8EGit%E9%82%A3%E7%82%B9%E4%BA%8B/</url>
-    <content><![CDATA[> Git的基本命令
-<!-- more -->
-
-### 1、初始化Git仓库
-
-```bash
-cd gitrepo
-git init
-git add .  # 本地添加修改
-git status
-# 设置本地用户名和邮箱
-git config --global user.name "name"
-git config --global user.email "eamil-address"
-git commit -m "first commit"  # 本地提交修改
-git branch -M main  # 给分支改名为main
-```
-
-### 2、链接到远程库
-
-```bash
-# 生成ssh公钥和私钥，将公钥存放到github公钥中
-sudo apt install ssh
-ssh-keygen -t rsa
-git remote add origin <url>  # 添加远程仓库
-git push -u origin main  # 推送分支
-```
-
-### 3、分支操作
-
-```bash
-git branch  # 查看本地分支
-git branch -a  # 查看本地和远程的所有分支
-
-git branch [branch_name]  # 新建分支
-git branch -m [branch_name]  # 移动/重命名分支（-M强制移动，即使没有完全合并）
-git branch -d [branch_name]  # 删除分支（-M强制删除，即使没有完全合并）
-
-git checkout [branch_name]  # 切换分支（-b同时创建分支）
-git diff [branch_name]  # 比较分支
-git merge [branch_name]  # 合并分支
-git push -u origin [branch_name]  # 提交分支，再次提交就不需要后面的参数了，-u就是--set-upstream，设置提交流
-```
-
-### 4、解决远程冲突
-
-```bash
-git fetch origin [branch_name]:[dev]  # 将远程分支拉到本地的另一条分支上
-git diff [dev]  # 比对本地和远程分支
-git merge [dev]  # 合并分支
-git push  # 重新提交
-git branch -d [dev]  # 删除远程分支
-```
-
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1460,6 +1217,249 @@ git push
         <tag>hexo</tag>
         <tag>blog</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>注意事项与网站导览</title>
+    <url>/2022/05/12/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E4%B8%8E%E7%BD%91%E7%AB%99%E5%AF%BC%E8%A7%88/</url>
+    <content><![CDATA[
+### 注意事项
+
+1、本博客中的内容未经允许禁止转载，联系方式在左侧下方，邮箱yuyu111813@163.com。
+
+2、网站启用了书签功能，所以如果想保留阅读进度，退出之前先点击一下右上角。
+
+3、启用了全站搜索功能，如果有某篇文章找不到了但是记住了关键词，可以使用左边的搜索找找看。
+
+### 网站导览
+]]></content>
+  </entry>
+  <entry>
+    <title>配置 Sublime 的 Markdown 书写环境</title>
+    <url>/2022/06/13/%E9%85%8D%E7%BD%AESublime%E7%9A%84Markdown%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[
+> 在 Sublime 上优雅地编辑 Markdown
+
+<!-- more -->
+
+## 一、在浏览器中实时查看Markdown
+
+### 1、MarkdownPreview
+
+Package Control 地址：https://packagecontrol.io/packages/MarkdownPreview<br>参考文档地址：https://facelessuser.github.io/MarkdownPreview/
+
+MarkdownPreview 可以在浏览器中预览当前编辑的 Markdown 文件，配合 LiveReload 插件可以在每一次手动保存的时候更新网页，配合 [auto-save](https://packagecontrol.io/packages/auto-save) 插件可以在每一次敲击的时候更新网页。
+
+![](http://cdn.kotkot.club/media/202206121146619.png)
+
+需要配置两处:
+
+①首选项 -> 快捷键设置，将 Markdown 预览绑定到一个比较好用的快捷键（这里是 Alt + M）。
+
+```json
+[
+	{ "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
+]
+```
+
+②首选项 -> Package Settings -> Markdown Preview -> Settings，启用 autoreload 自动刷新。
+
+```yml
+{
+	"enable_autoreload": true,
+}
+```
+
+### 2、LiveReload
+
+Package Control 地址：https://packagecontrol.io/packages/LiveReload<br>使用说明：http://livereload.com/extensions/
+
+![](http://cdn.kotkot.club/media/202206121146570.gif)
+
+需要配置三处：
+
+①首选项 -> Package Settings -> LiveReload -> Settings - User，在json中启用这两个插件。
+
+```yml
+{
+     "enabled_plugins": [
+          "SimpleReloadPlugin",
+          "SimpleRefresh"
+     ]
+}
+```
+
+②Chrome安装插件[LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)，安装完后点击管理扩展程序把“允许访问文件网址”勾上。
+
+<img src="http://cdn.kotkot.club/media/202206121147235.png" style="zoom:28%;" />
+
+③在 Sublime Text 中按 Ctrl + Shift + P 呼出命令列表选择 LiveReload: Enable/disable plug-ins，把 Simple Reload with delay(400ms) 或者 Simple Reload 激活一下。
+
+<img src="http://cdn.kotkot.club/media/202206121147920.png" style="zoom:50%;" />
+
+## 二、Markdown语法支持
+
+### 1、MarkdownEdit
+
+Package Control地址：https://packagecontrol.io/packages/MarkdownEditing
+
+可以在编辑Markdown的时候自动渲染和折行，和IA Writer差不多。基本不用设置什么，安装使用就好。
+
+### 2、Github Markdown Snippets
+
+Package Control地址：https://packagecontrol.io/packages/GitHub%20Markdown%20Snippets
+
+提供了一系列好用的代码片段，比如可以输入 img + TAB 迅速生成一块这样的代码：`![Image Title](Image Source) `，并且可以通过 TAB 键在不同位置跳转。
+
+<img src="http://cdn.kotkot.club/media/202206121147910.gif" style="zoom: 45%;" />
+
+下面是所有代码片段的列表，可以去上面的官方网站查看具体作用。
+
+```text
+  h1              // 一级标题
+  h2              // 二级标题
+  h3              // 三级标题
+  h4              // 四级标题
+  h5              // 五级标题
+  h6              // 六级标题
+  b               // 加粗
+  i               // 斜体
+  bq              // 引用块
+  strike          // 中划线
+  hr              // 分隔线
+  code            // 行内代码块
+  pre             // 代码块
+  a               // 锚点
+  img             // 图片
+  ol              // 有序列表
+  ul              // 无序列表
+  table           // 2x2表格
+```
+
+### 3、MarkdownWriter (Windows Only)
+
+Package Control地址：https://packagecontrol.io/packages/MarkdownWriter<br>Github仓库：https://github.com/vanleo2001/MarkdownWriter
+
+智能粘贴很好用，可以直接粘贴 HTML 为 Markdown 文本，也可以直接粘贴图片到本地引用。但是注意只支持 Windows，因为插件写的比较早，当时 Linux 和 Mac 还没有支持 PIL 库。
+
+<img src="http://cdn.kotkot.club/media/202206121147879.gif" style="zoom: 33%" />
+
+这个插件需要手动安装一下，按照 Github 中说明的步骤：
+
+①将文件夹解压到插件目录（首选项 -> 浏览插件目录）下。
+
+<img src="http://cdn.kotkot.club/media/202206121147037.png" style="zoom: 38%" />
+
+②在 Package Control.sublime-settings（首选项 -> Package Settings -> Package Control -> Settings）中添加一项 MarkdownWriter。
+
+<img src="http://cdn.kotkot.club/media/202206121147162.png" style="zoom: 44%;" />
+
+③如果是64位的Sublime的话需要替换一下PIL库。
+
+<img src="http://cdn.kotkot.club/media/202206121147735.png" style="zoom:38%" />
+
+## 三、实用插件
+
+### 1、AutoFileName
+
+Package Control地址：https://packagecontrol.io/packages/AutoFileName
+
+自动补全文件路径，但是目前对 Markdown 格式无效，所以可以通过 HTML 标签插入，或者通过其他的插件快速插入。
+
+### 2、SmartMarkdown
+
+Package Control地址：https://packagecontrol.io/packages/SmartMarkdown
+
+智能表格很好用，可以创建 [Pandoc](https://pandoc.org/MANUAL.html#tables) 形式的表格，就是被各种横线竖线框起来的那种。<br>也可以用来生成 Markdown 表格，表头正常输入`|header1|header2|header3|`之类的，表头和内容分隔线输入`|:-|:-:|-:|`之类的，下面就可以通过每行第一个字符输入`|`之后不断 <kbd>TAB</kbd> 补全，如下图GIF所示
+
+![](http://cdn.kotkot.club/media/202206121147423.gif)
+
+<a id="3%E3%80%81markdowncomplements"></a>
+### 3、MarkdownComplements
+
+Package Control 地址：https://packagecontrol.io/packages/MarkdownComplements
+
+提供了列表的自动缩进，以及几个与列表有关的小程序（列表头部替换、列表向左向右缩进、列表转换为表格）
+
+<img src="http://cdn.kotkot.club/media/202206121147263.gif" style="zoom: 50%;" />
+
+需要按需求配置一些快捷键：
+
+```yml
+[
+     { 
+     // 向左缩进
+    "keys": ["ctrl+enter"], "command": "markdown_indent_down",
+    "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.markdown" }]
+     },
+     // 向右缩进
+     { "keys": ["ctrl+shift+enter"], "command": "markdown_indent_up" },
+     // 更换列表头部（bullet）
+     { "keys": ["shift+enter"], "command": "markdown_rotate_list_item" },
+     // 列表转换为表格（设置为了 Ctrl + Shift + O）
+     { "keys": ["ctrl+shift+o"], "command": "outline_to_table"},
+]
+```
+
+### 4、MarkdownTOC
+
+Package Control 地址：https://packagecontrol.io/packages/SmartMarkdown
+
+在写文章的过程中自动生成TOC（Table Of Contents，文章列表），如下图所示：
+
+![image-20220528225001796](http://cdn.kotkot.club/media/202206121147479.png)
+
+**插入方法：**
+
+①在文章的任何一个地方插入这样的代码`[TOC]`，这样预览的文章中就会出现一个拥有所有全文标题的文章列表（包括一级大标题），但是这个列表不会真正添加到Markdown文件中。
+
+```markdown
+# Title
+
+[TOC]
+
+## title1
+
+paragraph1
+
+## title2
+
+paragraph2
+```
+
+②在文章的任何一个地方点击工具 -> MarkdownTOC -> Insert TOC 或者手动添加这样一段代码，这样就可以在文章更新的过程中在被框住的部分实时生成后面部分的 TOC。
+
+```markdown
+<!-- MarkdownTOC -->
+
+<!-- /MarkdownTOC -->
+```
+
+**实用技巧：**
+
+①如果想让TOC自动生成锚点与连接可以在MarkdownTOC的设置中加上下面代码块的几行，也可以直接在`<!-- MarkdownTOC -->`的标签里加，像这样：`<!-- MarkdownTOC autolink="true" autoanchor="true" -->`。
+
+```yml
+{
+  "defaults": {
+    "autoanchor": true,
+    "autolink": true,
+  },
+}
+```
+
+②如果想忽略某个标题的话也很简单，可以在标题上面加上下面的注释，更多的使用方法和设置可以去作者的文档里看。
+
+```markdown
+<!-- MarkdownTOC:excluded -->
+## title to be excluded
+```]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>sublime</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
